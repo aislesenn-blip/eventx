@@ -29,16 +29,19 @@
 
     <!-- Header Area with gradient -->
     <div class="bg-gradient-to-br from-fuchsia-600 to-purple-700 pt-8 pb-20 px-6 rounded-b-[40px] text-white">
-        <h1 class="text-2xl font-bold mb-8">Michango</h1>
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-2xl font-bold" data-i18n="contributions">Michango</h1>
+            <button onclick="toggleLanguage()" class="text-xs font-bold bg-white/20 px-2 py-1 rounded border border-white/40 text-white shadow-sm" data-i18n="lang_toggle">SW</button>
+        </div>
 
         <div class="text-center">
-            <p class="text-sm text-fuchsia-100 mb-1">Total Collected</p>
+            <p class="text-sm text-fuchsia-100 mb-1" data-i18n="total_collected">Total Collected</p>
             <h2 class="text-4xl font-bold mb-4">TZS 4.5M</h2>
 
             <div class="w-full bg-white/20 rounded-full h-2 mb-2">
                 <div class="bg-white h-2 rounded-full" style="width: 45%"></div>
             </div>
-            <p class="text-[10px] text-fuchsia-100">Target: TZS 10M (45%)</p>
+            <p class="text-[10px] text-fuchsia-100"><span data-i18n="target">Target</span>: TZS 10M (45%)</p>
         </div>
     </div>
 
@@ -49,14 +52,14 @@
                 <div class="h-8 w-8 rounded-full bg-emerald-50 flex items-center justify-center mb-2 text-emerald-500">
                     <i class="ph ph-arrow-down-left"></i>
                 </div>
-                <p class="text-[10px] text-slate-500 font-medium">Paid</p>
+                <p class="text-[10px] text-slate-500 font-medium" data-i18n="paid">Paid</p>
                 <h3 class="text-lg font-bold text-slate-800">4.5M</h3>
             </div>
             <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 hover-lift">
                 <div class="h-8 w-8 rounded-full bg-amber-50 flex items-center justify-center mb-2 text-amber-500">
                     <i class="ph ph-arrow-up-right"></i>
                 </div>
-                <p class="text-[10px] text-slate-500 font-medium">Pledges</p>
+                <p class="text-[10px] text-slate-500 font-medium" data-i18n="pledges">Pledges</p>
                 <h3 class="text-lg font-bold text-slate-800">1.2M</h3>
             </div>
         </div>
@@ -64,7 +67,7 @@
         <!-- Transactions -->
         <div>
             <div class="flex justify-between items-center mb-4">
-                <h3 class="text-base font-bold text-slate-800">Recent Transactions</h3>
+                <h3 class="text-base font-bold text-slate-800" data-i18n="recent_transactions">Recent Transactions</h3>
                 <button class="h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500">
                     <i class="ph ph-funnel"></i>
                 </button>
@@ -72,7 +75,7 @@
 
             <div class="relative mb-4">
                 <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
-                <input type="text" placeholder="Search contributor..." class="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm focus:border-fuchsia-500 focus:ring-1 focus:ring-fuchsia-500 outline-none">
+                <input type="text" data-i18n="search_contributor" placeholder="Search contributor..." class="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm focus:border-fuchsia-500 focus:ring-1 focus:ring-fuchsia-500 outline-none">
             </div>
 
             <div class="space-y-3">
@@ -89,7 +92,7 @@
                     </div>
                     <div class="text-right">
                         <p class="text-sm font-bold text-slate-800">TZS 500,000</p>
-                        <span class="inline-block px-2 py-0.5 bg-emerald-50 text-emerald-600 rounded text-[9px] font-bold mt-1">PAID</span>
+                        <span class="inline-block px-2 py-0.5 bg-emerald-50 text-emerald-600 rounded text-[9px] font-bold mt-1" data-i18n="status_paid">PAID</span>
                     </div>
                 </div>
 
@@ -106,7 +109,7 @@
                     </div>
                     <div class="text-right">
                         <p class="text-sm font-bold text-slate-800">TZS 200,000</p>
-                        <span class="inline-block px-2 py-0.5 bg-amber-50 text-amber-600 rounded text-[9px] font-bold mt-1">PLEDGED</span>
+                        <span class="inline-block px-2 py-0.5 bg-amber-50 text-amber-600 rounded text-[9px] font-bold mt-1" data-i18n="pledged">PLEDGED</span>
                     </div>
                 </div>
 
@@ -123,13 +126,14 @@
                     </div>
                     <div class="text-right">
                         <p class="text-sm font-bold text-slate-800">TZS 1,000,000</p>
-                        <span class="inline-block px-2 py-0.5 bg-emerald-50 text-emerald-600 rounded text-[9px] font-bold mt-1">PAID</span>
+                        <span class="inline-block px-2 py-0.5 bg-emerald-50 text-emerald-600 rounded text-[9px] font-bold mt-1" data-i18n="status_paid">PAID</span>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
+    <script src="js/i18n.js"></script>
     <script src="js/app.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {

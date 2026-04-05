@@ -31,11 +31,14 @@
     <header class="pt-8 pb-4 px-6">
         <div class="flex justify-between items-center mb-6">
             <div>
-                <p class="text-sm text-slate-500 mb-1">Karibu, Admin 👋</p>
-                <h1 class="text-2xl font-bold text-slate-800">Overview</h1>
+                <p class="text-sm text-slate-500 mb-1 flex items-center"><span data-i18n="welcome">Karibu</span></p>
+                <h1 class="text-2xl font-bold text-slate-800" data-i18n="overview">Overview</h1>
             </div>
-            <div class="h-10 w-10 rounded-full bg-slate-200 overflow-hidden border-2 border-white shadow-sm flex items-center justify-center">
-                 <i class="ph ph-user text-xl text-slate-500"></i>
+            <div class="flex items-center space-x-3">
+                <button onclick="toggleLanguage()" class="text-xs font-bold bg-white px-2 py-1 rounded border border-slate-200 text-slate-600 shadow-sm" data-i18n="lang_toggle">SW</button>
+                <div class="h-10 w-10 rounded-full bg-slate-200 overflow-hidden border-2 border-white shadow-sm flex items-center justify-center">
+                     <i class="ph ph-user text-xl text-slate-500"></i>
+                </div>
             </div>
         </div>
     </header>
@@ -47,23 +50,23 @@
                 <div class="h-10 w-10 rounded-full bg-fuchsia-100 flex items-center justify-center mb-3">
                     <i class="ph ph-calendar-check text-fuchsia-600 text-xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-slate-800">4</h3>
-                <p class="text-xs text-slate-500 font-medium mt-1">Active Events</p>
+                <h3 class="text-2xl font-bold text-slate-800">12</h3>
+                <p class="text-xs text-slate-500 font-medium mt-1" data-i18n="active_events">Active Events</p>
             </div>
             <div class="glass-card rounded-2xl p-4 hover-lift">
                 <div class="h-10 w-10 rounded-full bg-emerald-100 flex items-center justify-center mb-3">
                     <i class="ph ph-wallet text-emerald-600 text-xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-slate-800">TZS 4.5M</h3>
-                <p class="text-xs text-slate-500 font-medium mt-1">Total Collected</p>
+                <p class="text-xs text-slate-500 font-medium mt-1" data-i18n="total_collected">Total Collected</p>
             </div>
         </div>
 
         <!-- Upcoming Event -->
         <div>
             <div class="flex justify-between items-end mb-4">
-                <h2 class="text-lg font-bold text-slate-800">Next Event</h2>
-                <a href="events.html" class="text-sm text-fuchsia-600 font-medium">View all</a>
+                <h2 class="text-lg font-bold text-slate-800" data-i18n="next_event">Next Event</h2>
+                <a href="events.html" class="text-sm text-fuchsia-600 font-medium" data-i18n="view_all">View all</a>
             </div>
 
             <a href="event-details.html" class="block">
@@ -79,7 +82,7 @@
                     </div>
 
                     <div class="p-5 absolute bottom-0 w-full">
-                        <span class="inline-block px-2 py-1 bg-white/20 backdrop-blur-md rounded text-[10px] font-bold text-white mb-2 uppercase tracking-wider">
+                        <span class="inline-block px-2 py-1 bg-white/20 backdrop-blur-md rounded text-[10px] font-bold text-white mb-2 uppercase tracking-wider" data-i18n="filter_weddings">
                             Wedding
                         </span>
                         <h3 class="text-xl font-bold text-white mb-1 leading-tight">Aisha & Ali Wedding</h3>
@@ -93,37 +96,38 @@
         </div>
 
         <!-- Quick Actions -->
-        <div>
-            <h2 class="text-lg font-bold text-slate-800 mb-4">Quick Actions</h2>
+        <div class="pb-6">
+            <h2 class="text-lg font-bold text-slate-800 mb-4" data-i18n="overview">Quick Actions</h2>
             <div class="grid grid-cols-4 gap-3">
                 <button class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift">
                     <div class="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center mb-2">
                         <i class="ph ph-plus text-blue-500 text-xl"></i>
                     </div>
-                    <span class="text-[10px] font-medium text-slate-600 text-center">New Event</span>
+                    <span class="text-[10px] font-medium text-slate-600 text-center" data-i18n="new_event">New Event</span>
                 </button>
                 <button class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift">
                     <div class="h-12 w-12 rounded-full bg-emerald-50 flex items-center justify-center mb-2 relative">
                         <i class="ph ph-money text-emerald-500 text-xl"></i>
                     </div>
-                    <span class="text-[10px] font-medium text-slate-600 text-center">Add Payment</span>
+                    <span class="text-[10px] font-medium text-slate-600 text-center" data-i18n="add_payment">Add Payment</span>
                 </button>
                 <button class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift">
                     <div class="h-12 w-12 rounded-full bg-amber-50 flex items-center justify-center mb-2">
                         <i class="ph ph-qr-code text-amber-500 text-xl"></i>
                     </div>
-                    <span class="text-[10px] font-medium text-slate-600 text-center">Scan Guest</span>
+                    <span class="text-[10px] font-medium text-slate-600 text-center" data-i18n="scan_guest">Scan Guest</span>
                 </button>
                 <button class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift">
                     <div class="h-12 w-12 rounded-full bg-purple-50 flex items-center justify-center mb-2">
                         <i class="ph ph-users text-purple-500 text-xl"></i>
                     </div>
-                    <span class="text-[10px] font-medium text-slate-600 text-center">Guests</span>
+                    <span class="text-[10px] font-medium text-slate-600 text-center" data-i18n="guests">Guests</span>
                 </button>
             </div>
         </div>
     </main>
 
+    <script src="js/i18n.js"></script>
     <script src="js/app.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {

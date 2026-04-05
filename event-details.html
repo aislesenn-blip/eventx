@@ -46,7 +46,7 @@
         </div>
 
         <div class="absolute bottom-6 left-6 right-6">
-            <span class="inline-block px-2 py-1 bg-fuchsia-600 rounded text-[10px] font-bold text-white mb-2 shadow-sm">
+            <span class="inline-block px-2 py-1 bg-fuchsia-600 rounded text-[10px] font-bold text-white mb-2 shadow-sm" data-i18n="event_upcoming">
                 Upcoming
             </span>
             <h1 class="text-2xl font-bold text-white mb-1">Aisha & Ali Wedding</h1>
@@ -54,7 +54,7 @@
     </div>
 
     <!-- Content -->
-    <div class="px-6 py-6 space-y-6">
+    <div class="px-6 py-6 space-y-6 mb-20">
 
         <!-- Date & Time -->
         <div class="flex items-center">
@@ -80,7 +80,7 @@
 
         <!-- Description -->
         <div>
-            <h3 class="text-base font-bold text-slate-800 mb-2">About Event</h3>
+            <h3 class="text-base font-bold text-slate-800 mb-2" data-i18n="about_event">About Event</h3>
             <p class="text-sm text-slate-600 leading-relaxed">
                 Join us to celebrate the union of Aisha and Ali. The ceremony will begin promptly at 2:00 PM, followed by a reception with dinner and dancing.
             </p>
@@ -88,25 +88,25 @@
 
         <!-- Committee Leaders -->
         <div>
-            <h3 class="text-base font-bold text-slate-800 mb-4">Committee</h3>
+            <h3 class="text-base font-bold text-slate-800 mb-4" data-i18n="committee">Committee</h3>
             <div class="flex items-center space-x-4">
                 <div class="text-center">
                     <div class="h-14 w-14 rounded-full bg-slate-200 border-2 border-white shadow-sm flex items-center justify-center mb-2 mx-auto">
                         <i class="ph ph-user text-xl text-slate-500"></i>
                     </div>
-                    <p class="text-[10px] font-bold text-slate-800">Chairman</p>
+                    <p class="text-[10px] font-bold text-slate-800" data-i18n="chairman">Chairman</p>
                 </div>
                 <div class="text-center">
                     <div class="h-14 w-14 rounded-full bg-slate-200 border-2 border-white shadow-sm flex items-center justify-center mb-2 mx-auto">
                         <i class="ph ph-user text-xl text-slate-500"></i>
                     </div>
-                    <p class="text-[10px] font-bold text-slate-800">Treasurer</p>
+                    <p class="text-[10px] font-bold text-slate-800" data-i18n="treasurer">Treasurer</p>
                 </div>
                 <div class="text-center">
                     <div class="h-14 w-14 rounded-full bg-fuchsia-50 border-2 border-dashed border-fuchsia-200 text-fuchsia-500 flex items-center justify-center mb-2 mx-auto">
                         <i class="ph ph-plus text-xl"></i>
                     </div>
-                    <p class="text-[10px] font-bold text-fuchsia-600">Add</p>
+                    <p class="text-[10px] font-bold text-fuchsia-600" data-i18n="add">Add</p>
                 </div>
             </div>
         </div>
@@ -115,14 +115,15 @@
 
     <!-- Fixed Action Bar -->
     <div class="fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 p-4 flex gap-3">
-        <button class="flex-1 bg-slate-100 text-slate-800 font-bold py-3.5 rounded-xl text-sm transition-colors hover:bg-slate-200">
+        <button class="flex-1 bg-slate-100 text-slate-800 font-bold py-3.5 rounded-xl text-sm transition-colors hover:bg-slate-200" data-i18n="edit_details">
             Edit Details
         </button>
-        <a href="michango.html" class="flex-1 bg-fuchsia-600 text-white font-bold py-3.5 rounded-xl text-sm text-center shadow-md shadow-fuchsia-200 transition-colors hover:bg-fuchsia-700">
+        <a href="michango.html" class="flex-1 bg-fuchsia-600 text-white font-bold py-3.5 rounded-xl text-sm text-center shadow-md shadow-fuchsia-200 transition-colors hover:bg-fuchsia-700" data-i18n="view_michango">
             View Michango
         </a>
     </div>
 
+    <script src="js/i18n.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
