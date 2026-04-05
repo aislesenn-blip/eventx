@@ -19,7 +19,7 @@ const EventDetails = () => {
       {/* Hero Header */}
       <div className="relative h-72">
         <img
-          src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NjMzNTJ8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nfGVufDB8MHx8fDE3NzUzNzAwNTd8MA&ixlib=rb-4.1.0&q=80&w=1080"
           alt="Event Cover"
           className="w-full h-full object-cover"
         />

@@ -9,7 +9,7 @@ const MOCK_EVENTS = [
     type: "Wedding",
     date: "Oct 24, 2024",
     location: "Mlimani City Hall, Dar es Salaam",
-    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NjMzNTJ8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nfGVufDB8MHx8fDE3NzUzNzAwNTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
     status: "Upcoming"
   },
   {
@@ -18,7 +18,7 @@ const MOCK_EVENTS = [
     type: "Send-off",
     date: "Nov 15, 2024",
     location: "Kibo Hall, Moshi",
-    image: "https://images.unsplash.com/photo-1530103862676-de8892b07f87?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NjMzNTJ8MHwxfHNlYXJjaHwyfHx3ZWRkaW5nfGVufDB8MHx8fDE3NzUzNzAwNTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
     status: "Planning"
   },
   {
@@ -27,7 +27,7 @@ const MOCK_EVENTS = [
     type: "Birthday",
     date: "Dec 05, 2024",
     location: "Sea Cliff Resort, Zanzibar",
-    image: "https://images.unsplash.com/photo-1530103862676-de8892b07f87?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1606800052052-a08af7148866?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NjMzNTJ8MHwxfHNlYXJjaHwzfHx3ZWRkaW5nfGVufDB8MHx8fDE3NzUzNzAwNTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
     status: "Upcoming"
   }
 ];
