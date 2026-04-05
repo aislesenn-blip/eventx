@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Smart Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fuchsia: {
+                            50: '#fdf4ff',
+                            100: '#fae8ff',
+                            500: '#d946ef',
+                            600: '#c026d3',
+                            700: '#a21caf',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200">
+        <div class="px-6 py-4 flex items-center justify-between">
+            <h1 class="text-xl font-bold text-slate-800">My Events</h1>
+            <button class="h-8 w-8 rounded-full bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center">
+                <i class="ph ph-plus font-bold"></i>
+            </button>
+        </div>
+
+        <!-- Search & Filter -->
+        <div class="px-6 pb-4">
+            <div class="relative mb-4">
+                <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                <input type="text" placeholder="Search events..." class="w-full pl-10 pr-4 py-2 bg-slate-100 border-transparent rounded-xl text-sm focus:border-fuchsia-500 focus:bg-white focus:ring-2 focus:ring-fuchsia-200 outline-none transition-all">
+            </div>
+            <div class="flex space-x-2 overflow-x-auto pb-1 scrollbar-hide">
+                <button class="px-4 py-1.5 bg-fuchsia-600 text-white rounded-full text-xs font-medium whitespace-nowrap">All</button>
+                <button class="px-4 py-1.5 bg-white border border-slate-200 text-slate-600 rounded-full text-xs font-medium whitespace-nowrap">Weddings</button>
+                <button class="px-4 py-1.5 bg-white border border-slate-200 text-slate-600 rounded-full text-xs font-medium whitespace-nowrap">Send-offs</button>
+                <button class="px-4 py-1.5 bg-white border border-slate-200 text-slate-600 rounded-full text-xs font-medium whitespace-nowrap">Birthdays</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="px-6 py-6 space-y-5">
+        <!-- Event Card 1 -->
+        <a href="event-details.html" class="block">
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover-lift">
+                <div class="h-32 w-full relative">
+                    <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=800" alt="Wedding" class="w-full h-full object-cover">
+                    <div class="absolute top-3 left-3 bg-white/90 px-2 py-1 rounded text-[10px] font-bold text-slate-800 shadow-sm">
+                        Wedding
+                    </div>
+                    <div class="absolute top-3 right-3 bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full text-[10px] font-bold shadow-sm">
+                        Upcoming
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-base font-bold text-slate-800 mb-2">Aisha & Ali Wedding</h3>
+                    <div class="space-y-1.5">
+                        <div class="flex items-center text-xs text-slate-500">
+                            <i class="ph ph-calendar-blank mr-2 text-fuchsia-500 text-sm"></i>
+                            24 Oct, 2024
+                        </div>
+                        <div class="flex items-center text-xs text-slate-500">
+                            <i class="ph ph-map-pin mr-2 text-fuchsia-500 text-sm"></i>
+                            Mlimani City Hall, Dar
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <!-- Event Card 2 -->
+        <a href="#" class="block">
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover-lift">
+                <div class="h-32 w-full relative">
+                    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=800" alt="Send-off" class="w-full h-full object-cover">
+                    <div class="absolute top-3 left-3 bg-white/90 px-2 py-1 rounded text-[10px] font-bold text-slate-800 shadow-sm">
+                        Send-off
+                    </div>
+                    <div class="absolute top-3 right-3 bg-amber-100 text-amber-700 px-2 py-1 rounded-full text-[10px] font-bold shadow-sm">
+                        Planning
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-base font-bold text-slate-800 mb-2">John Send-off</h3>
+                    <div class="space-y-1.5">
+                        <div class="flex items-center text-xs text-slate-500">
+                            <i class="ph ph-calendar-blank mr-2 text-fuchsia-500 text-sm"></i>
+                            15 Nov, 2024
+                        </div>
+                        <div class="flex items-center text-xs text-slate-500">
+                            <i class="ph ph-map-pin mr-2 text-fuchsia-500 text-sm"></i>
+                            Kibo Hall, Moshi
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            renderBottomNav('events');
+        });
+    </script>
+</body>
+</html>

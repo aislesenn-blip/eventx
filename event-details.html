@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - Smart Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fuchsia: {
+                            50: '#fdf4ff',
+                            100: '#fae8ff',
+                            500: '#d946ef',
+                            600: '#c026d3',
+                            700: '#a21caf',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 min-h-screen pb-0"> <!-- Remove bottom padding as no nav -->
+
+    <!-- Header Image & Back Button -->
+    <div class="relative h-64 w-full">
+        <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=800" alt="Event Cover" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+
+        <a href="events.html" class="absolute top-6 left-6 h-10 w-10 bg-black/30 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+            <i class="ph ph-arrow-left text-xl"></i>
+        </a>
+
+        <div class="absolute top-6 right-6 flex space-x-2">
+            <button class="h-10 w-10 bg-black/30 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+                <i class="ph ph-share-network text-xl"></i>
+            </button>
+            <button class="h-10 w-10 bg-black/30 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+                <i class="ph ph-dots-three text-xl"></i>
+            </button>
+        </div>
+
+        <div class="absolute bottom-6 left-6 right-6">
+            <span class="inline-block px-2 py-1 bg-fuchsia-600 rounded text-[10px] font-bold text-white mb-2 shadow-sm">
+                Upcoming
+            </span>
+            <h1 class="text-2xl font-bold text-white mb-1">Aisha & Ali Wedding</h1>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="px-6 py-6 space-y-6">
+
+        <!-- Date & Time -->
+        <div class="flex items-center">
+            <div class="h-12 w-12 rounded-xl bg-fuchsia-50 text-fuchsia-600 flex items-center justify-center mr-4 shrink-0">
+                <i class="ph ph-calendar-blank text-2xl"></i>
+            </div>
+            <div>
+                <p class="text-sm font-bold text-slate-800">24 October, 2024</p>
+                <p class="text-xs text-slate-500">14:00 - 23:00 EAT</p>
+            </div>
+        </div>
+
+        <!-- Location -->
+        <div class="flex items-center">
+            <div class="h-12 w-12 rounded-xl bg-fuchsia-50 text-fuchsia-600 flex items-center justify-center mr-4 shrink-0">
+                <i class="ph ph-map-pin text-2xl"></i>
+            </div>
+            <div>
+                <p class="text-sm font-bold text-slate-800">Mlimani City Hall</p>
+                <p class="text-xs text-slate-500">Dar es Salaam, Tanzania</p>
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div>
+            <h3 class="text-base font-bold text-slate-800 mb-2">About Event</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+                Join us to celebrate the union of Aisha and Ali. The ceremony will begin promptly at 2:00 PM, followed by a reception with dinner and dancing.
+            </p>
+        </div>
+
+        <!-- Committee Leaders -->
+        <div>
+            <h3 class="text-base font-bold text-slate-800 mb-4">Committee</h3>
+            <div class="flex items-center space-x-4">
+                <div class="text-center">
+                    <div class="h-14 w-14 rounded-full bg-slate-200 border-2 border-white shadow-sm flex items-center justify-center mb-2 mx-auto">
+                        <i class="ph ph-user text-xl text-slate-500"></i>
+                    </div>
+                    <p class="text-[10px] font-bold text-slate-800">Chairman</p>
+                </div>
+                <div class="text-center">
+                    <div class="h-14 w-14 rounded-full bg-slate-200 border-2 border-white shadow-sm flex items-center justify-center mb-2 mx-auto">
+                        <i class="ph ph-user text-xl text-slate-500"></i>
+                    </div>
+                    <p class="text-[10px] font-bold text-slate-800">Treasurer</p>
+                </div>
+                <div class="text-center">
+                    <div class="h-14 w-14 rounded-full bg-fuchsia-50 border-2 border-dashed border-fuchsia-200 text-fuchsia-500 flex items-center justify-center mb-2 mx-auto">
+                        <i class="ph ph-plus text-xl"></i>
+                    </div>
+                    <p class="text-[10px] font-bold text-fuchsia-600">Add</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Fixed Action Bar -->
+    <div class="fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 p-4 flex gap-3">
+        <button class="flex-1 bg-slate-100 text-slate-800 font-bold py-3.5 rounded-xl text-sm transition-colors hover:bg-slate-200">
+            Edit Details
+        </button>
+        <a href="michango.html" class="flex-1 bg-fuchsia-600 text-white font-bold py-3.5 rounded-xl text-sm text-center shadow-md shadow-fuchsia-200 transition-colors hover:bg-fuchsia-700">
+            View Michango
+        </a>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Events - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fuchsia: {
+                            50: '#fdf4ff',
+                            100: '#fae8ff',
+                            500: '#d946ef',
+                            600: '#c026d3',
+                            700: '#a21caf',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+    <!-- Header -->
+    <header class="pt-8 pb-4 px-6">
+        <div class="flex justify-between items-center mb-6">
+            <div>
+                <p class="text-sm text-slate-500 mb-1">Karibu, Admin 👋</p>
+                <h1 class="text-2xl font-bold text-slate-800">Overview</h1>
+            </div>
+            <div class="h-10 w-10 rounded-full bg-slate-200 overflow-hidden border-2 border-white shadow-sm flex items-center justify-center">
+                 <i class="ph ph-user text-xl text-slate-500"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="px-6 space-y-6">
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-2 gap-4">
+            <div class="glass-card rounded-2xl p-4 hover-lift">
+                <div class="h-10 w-10 rounded-full bg-fuchsia-100 flex items-center justify-center mb-3">
+                    <i class="ph ph-calendar-check text-fuchsia-600 text-xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800">4</h3>
+                <p class="text-xs text-slate-500 font-medium mt-1">Active Events</p>
+            </div>
+            <div class="glass-card rounded-2xl p-4 hover-lift">
+                <div class="h-10 w-10 rounded-full bg-emerald-100 flex items-center justify-center mb-3">
+                    <i class="ph ph-wallet text-emerald-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800">TZS 4.5M</h3>
+                <p class="text-xs text-slate-500 font-medium mt-1">Total Collected</p>
+            </div>
+        </div>
+
+        <!-- Upcoming Event -->
+        <div>
+            <div class="flex justify-between items-end mb-4">
+                <h2 class="text-lg font-bold text-slate-800">Next Event</h2>
+                <a href="events.html" class="text-sm text-fuchsia-600 font-medium">View all</a>
+            </div>
+
+            <a href="event-details.html" class="block">
+                <div class="glass-card rounded-3xl overflow-hidden hover-lift group relative">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <!-- Unsplash Image for Wedding -->
+                        <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=800" alt="Wedding Event" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-fuchsia-600 shadow-sm">
+                            24 Oct
+                        </div>
+                    </div>
+
+                    <div class="p-5 absolute bottom-0 w-full">
+                        <span class="inline-block px-2 py-1 bg-white/20 backdrop-blur-md rounded text-[10px] font-bold text-white mb-2 uppercase tracking-wider">
+                            Wedding
+                        </span>
+                        <h3 class="text-xl font-bold text-white mb-1 leading-tight">Aisha & Ali Wedding</h3>
+                        <div class="flex items-center text-slate-200 text-xs">
+                            <i class="ph ph-map-pin mr-1"></i>
+                            Mlimani City Hall, Dar es Salaam
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Quick Actions -->
+        <div>
+            <h2 class="text-lg font-bold text-slate-800 mb-4">Quick Actions</h2>
+            <div class="grid grid-cols-4 gap-3">
+                <button class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift">
+                    <div class="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center mb-2">
+                        <i class="ph ph-plus text-blue-500 text-xl"></i>
+                    </div>
+                    <span class="text-[10px] font-medium text-slate-600 text-center">New Event</span>
+                </button>
+                <button class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift">
+                    <div class="h-12 w-12 rounded-full bg-emerald-50 flex items-center justify-center mb-2 relative">
+                        <i class="ph ph-money text-emerald-500 text-xl"></i>
+                    </div>
+                    <span class="text-[10px] font-medium text-slate-600 text-center">Add Payment</span>
+                </button>
+                <button class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift">
+                    <div class="h-12 w-12 rounded-full bg-amber-50 flex items-center justify-center mb-2">
+                        <i class="ph ph-qr-code text-amber-500 text-xl"></i>
+                    </div>
+                    <span class="text-[10px] font-medium text-slate-600 text-center">Scan Guest</span>
+                </button>
+                <button class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift">
+                    <div class="h-12 w-12 rounded-full bg-purple-50 flex items-center justify-center mb-2">
+                        <i class="ph ph-users text-purple-500 text-xl"></i>
+                    </div>
+                    <span class="text-[10px] font-medium text-slate-600 text-center">Guests</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            renderBottomNav('home');
+        });
+    </script>
+</body>
+</html>
