@@ -112,11 +112,22 @@ const mockEvents = [
     {
         id: 11,
         title: "Tech Conference Gala",
-        type: "Send-off",
-        typeId: "sendoffs",
+        type: "Conference",
+        typeId: "conferences",
         date: "01 Jul, 2025",
         location: "JNICC, Dar es Salaam",
         image: "https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&q=80&w=800",
+        status: "Planning",
+        statusId: "event_planning"
+    },
+    {
+        id: 13,
+        title: "Community Borehole Fundraiser",
+        type: "Fundraising",
+        typeId: "fundraising",
+        date: "10 Sep, 2025",
+        location: "Diamond Jubilee Hall, Dar",
+        image: "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80&w=800",
         status: "Planning",
         statusId: "event_planning"
     },

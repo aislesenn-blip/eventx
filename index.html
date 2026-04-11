@@ -35,6 +35,11 @@
                 <h1 class="text-2xl font-bold text-slate-800" data-i18n="overview">Overview</h1>
             </div>
             <div class="flex items-center space-x-3">
+                <!-- Premium Crown Badge -->
+                <div class="hidden sm:flex items-center px-2 py-1 bg-gradient-to-r from-amber-100 to-amber-50 rounded-lg border border-amber-200">
+                    <i class="ph ph-crown text-amber-500 mr-1"></i>
+                    <span class="text-[10px] font-bold text-amber-700">PRO</span>
+                </div>
                 <button onclick="toggleLanguage()" class="text-xs font-bold bg-white px-2 py-1 rounded border border-slate-200 text-slate-600 shadow-sm" data-i18n="lang_toggle">SW</button>
                 <div class="h-10 w-10 rounded-full bg-slate-200 overflow-hidden border-2 border-white shadow-sm flex items-center justify-center">
                      <i class="ph ph-user text-xl text-slate-500"></i>
@@ -99,24 +104,24 @@
         <div class="pb-6">
             <h2 class="text-lg font-bold text-slate-800 mb-4" data-i18n="overview">Quick Actions</h2>
             <div class="grid grid-cols-4 gap-3">
-                <button class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift">
+                <a href="add-event.html" class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift block">
                     <div class="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center mb-2">
                         <i class="ph ph-plus text-blue-500 text-xl"></i>
                     </div>
                     <span class="text-[10px] font-medium text-slate-600 text-center" data-i18n="new_event">New Event</span>
-                </button>
+                </a>
                 <button class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift">
                     <div class="h-12 w-12 rounded-full bg-emerald-50 flex items-center justify-center mb-2 relative">
                         <i class="ph ph-money text-emerald-500 text-xl"></i>
                     </div>
                     <span class="text-[10px] font-medium text-slate-600 text-center" data-i18n="add_payment">Add Payment</span>
                 </button>
-                <button class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift">
+                <a href="ticket.html" class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift block">
                     <div class="h-12 w-12 rounded-full bg-amber-50 flex items-center justify-center mb-2">
                         <i class="ph ph-qr-code text-amber-500 text-xl"></i>
                     </div>
-                    <span class="text-[10px] font-medium text-slate-600 text-center" data-i18n="scan_guest">Scan Guest</span>
-                </button>
+                    <span class="text-[10px] font-medium text-slate-600 text-center" data-i18n="scan_guest">My Ticket</span>
+                </a>
                 <button class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift">
                     <div class="h-12 w-12 rounded-full bg-purple-50 flex items-center justify-center mb-2">
                         <i class="ph ph-users text-purple-500 text-xl"></i>
@@ -128,10 +133,39 @@
     </main>
 
     <script src="js/i18n.js"></script>
+    <!-- Driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
     <script src="js/app.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             renderBottomNav('home');
+
+            // Initialize Onboarding Tour
+            setTimeout(() => {
+                const hasSeenTour = localStorage.getItem('hasSeenTour');
+                if (!hasSeenTour) {
+                    const driverObj = window.driver.js.driver({
+                        showProgress: true,
+                        steps: [
+                            { element: 'header', popover: { title: 'Welcome to Smart Events!', description: 'The #1 Event Management Platform in Africa. Let\'s take a quick tour.', side: "bottom", align: 'start' }},
+                            { element: '.grid.grid-cols-2', popover: { title: 'Quick Stats', description: 'Track your active events and total funds collected right from the dashboard.', side: "bottom", align: 'start' }},
+                            { element: '.glass-card.rounded-3xl', popover: { title: 'Your Next Big Event', description: 'Get a quick glance at your upcoming event and its details.', side: "top", align: 'start' }},
+                            { element: '.grid.grid-cols-4', popover: { title: 'Quick Actions', description: 'Create new events, scan guests via QR, or add payments instantly.', side: "top", align: 'start' }},
+                            { element: '.glass-nav', popover: { title: 'Navigation', description: 'Access your Events, Contributions (Michango), and Profile from here.', side: "top", align: 'center' }}
+                        ],
+                        onDestroyStarted: () => {
+                            if (!driverObj.hasNextStep() || confirm("Are you sure you want to skip the tour?")) {
+                                localStorage.setItem('hasSeenTour', 'true');
+                                driverObj.destroy();
+                            }
+                        },
+                    });
+
+                    driverObj.drive();
+                }
+            }, 1000); // Small delay to let page render
         });
     </script>
 </body>
