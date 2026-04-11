@@ -110,19 +110,15 @@
             <h3 class="text-base font-bold text-slate-800 mb-4" data-i18n="committee">Committee</h3>
             <div class="flex items-center space-x-4">
                 <div class="text-center">
-                    <div class="h-14 w-14 rounded-full bg-slate-200 border-2 border-white shadow-sm flex items-center justify-center mb-2 mx-auto">
-                        <i class="ph ph-user text-xl text-slate-500"></i>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="Chairman" class="h-14 w-14 rounded-full object-cover border-2 border-white shadow-sm mb-2 mx-auto">
                     <p class="text-[10px] font-bold text-slate-800" data-i18n="chairman">Chairman</p>
                 </div>
                 <div class="text-center">
-                    <div class="h-14 w-14 rounded-full bg-slate-200 border-2 border-white shadow-sm flex items-center justify-center mb-2 mx-auto">
-                        <i class="ph ph-user text-xl text-slate-500"></i>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" alt="Treasurer" class="h-14 w-14 rounded-full object-cover border-2 border-white shadow-sm mb-2 mx-auto">
                     <p class="text-[10px] font-bold text-slate-800" data-i18n="treasurer">Treasurer</p>
                 </div>
                 <div class="text-center">
-                    <div class="h-14 w-14 rounded-full bg-fuchsia-50 border-2 border-dashed border-fuchsia-200 text-fuchsia-500 flex items-center justify-center mb-2 mx-auto">
+                    <div class="h-14 w-14 rounded-full bg-fuchsia-50 border-2 border-dashed border-fuchsia-200 text-fuchsia-500 flex items-center justify-center mb-2 mx-auto hover-lift cursor-pointer">
                         <i class="ph ph-plus text-xl"></i>
                     </div>
                     <p class="text-[10px] font-bold text-fuchsia-600" data-i18n="add">Add</p>
@@ -154,11 +150,12 @@
                 <h3 class="text-lg font-bold text-slate-800 mb-2">Smart Concepts</h3>
                 <p class="text-sm text-slate-500" data-i18n="ai_generating">AI is generating luxury concepts...</p>
             </div>
-            <div class="space-y-3 mb-6">
+            <!-- AI Content replaced via JS dynamically to simulate 'generation' -->
+            <div id="ai-content-container" class="space-y-3 mb-6">
                 <div class="h-24 w-full shimmer rounded-xl"></div>
                 <div class="h-24 w-full shimmer rounded-xl"></div>
             </div>
-            <button onclick="closeModal('ai-modal')" class="w-full bg-slate-100 text-slate-800 font-bold py-3.5 rounded-xl text-sm transition-colors hover:bg-slate-200">Close</button>
+            <button onclick="closeModal('ai-modal')" class="w-full bg-slate-100 text-slate-800 font-bold py-3.5 rounded-xl text-sm transition-colors hover:bg-slate-200 hover-lift">Close</button>
         </div>
     </div>
 
@@ -166,14 +163,40 @@
     <div id="ar-modal" class="fixed inset-0 z-50 hidden">
         <div class="absolute inset-0 bg-slate-900/90 backdrop-blur-md" onclick="closeModal('ar-modal')"></div>
         <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10">
-            <div class="relative h-64 w-full max-w-sm rounded-3xl border-2 border-dashed border-blue-400 flex items-center justify-center mb-8 overflow-hidden">
-                <div class="absolute inset-0 bg-blue-500/10"></div>
-                <div class="h-full w-2 bg-blue-400 absolute left-0 animate-[scan_2s_ease-in-out_infinite_alternate]"></div>
-                <i class="ph ph-camera text-5xl text-blue-400 opacity-50 pulse-badge rounded-full"></i>
+            <!-- Simulated AR Viewport -->
+            <div class="relative h-96 w-full max-w-sm rounded-[2rem] border-4 border-slate-800 overflow-hidden mb-8 shadow-2xl relative">
+                <!-- AR Background Image from Unsplash representing physical room -->
+                <img id="ar-bg" src="" alt="Room Scan" class="w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+
+                <!-- Scanning Overlay -->
+                <div id="ar-overlay" class="absolute inset-0 flex items-center justify-center bg-slate-900/80 backdrop-blur-sm z-20">
+                    <div class="relative h-full w-full">
+                        <div class="h-full w-2 bg-blue-400 absolute left-0 animate-[scan_2s_ease-in-out_infinite_alternate]"></div>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center">
+                            <i class="ph ph-camera text-5xl text-blue-400 opacity-50 pulse-badge rounded-full mb-4"></i>
+                            <p class="text-slate-300 text-sm font-medium" data-i18n="ar_scanning">Scanning room environment...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AR Decor Overlay (Appears after scan) -->
+                <div id="ar-decor" class="absolute inset-0 bg-black/20 hidden flex-col justify-end p-4 z-30">
+                     <div class="bg-white/90 backdrop-blur-md rounded-2xl p-3 shadow-lg transform translate-y-4 opacity-0 transition-all duration-500" id="ar-popup">
+                         <div class="flex items-center">
+                             <div class="h-10 w-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mr-3 shrink-0">
+                                 <i class="ph ph-armchair text-xl"></i>
+                             </div>
+                             <div>
+                                 <p class="text-sm font-bold text-slate-800">Premium Seating</p>
+                                 <p class="text-[10px] text-slate-500">Gold Chiavari Chairs applied</p>
+                             </div>
+                         </div>
+                     </div>
+                </div>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2" data-i18n="ar_preview">AR Room Preview</h3>
-            <p class="text-slate-300 mb-8" data-i18n="ar_scanning">Scanning room environment...</p>
-            <button onclick="closeModal('ar-modal')" class="bg-white text-slate-900 font-bold py-3 px-8 rounded-full shadow-lg">Exit AR Mode</button>
+
+            <h3 class="text-2xl font-bold text-white mb-6" data-i18n="ar_preview">AR Room Preview</h3>
+            <button onclick="closeModal('ar-modal')" class="bg-white text-slate-900 font-bold py-3 px-8 rounded-full shadow-lg hover-lift">Exit AR Mode</button>
         </div>
     </div>
 
@@ -195,7 +218,84 @@
             modal.classList.remove('hidden');
             setTimeout(() => {
                 modal.classList.add('modal-open');
+
+                // Trigger AI Simulation
+                if(id === 'ai-modal') {
+                    simulateAIGeneration();
+                }
+
+                // Trigger AR Simulation
+                if(id === 'ar-modal') {
+                    simulateARScan();
+                }
             }, 10);
+        }
+
+        function simulateAIGeneration() {
+            const container = document.getElementById('ai-content-container');
+            // Reset to shimmer
+            container.innerHTML = `
+                <div class="h-24 w-full shimmer rounded-xl"></div>
+                <div class="h-24 w-full shimmer rounded-xl"></div>
+            `;
+
+            setTimeout(() => {
+                // Populate with Unsplash Images
+                container.innerHTML = `
+                    <div class="relative h-28 w-full rounded-xl overflow-hidden shadow-sm mb-3 group">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=800" alt="Decor" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                        <div class="absolute bottom-3 left-3">
+                            <p class="text-white text-sm font-bold">Royal Gold Theme</p>
+                            <p class="text-white/80 text-[10px]">98% Match to preferences</p>
+                        </div>
+                    </div>
+                    <div class="relative h-28 w-full rounded-xl overflow-hidden shadow-sm group">
+                        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=800" alt="Lighting" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                        <div class="absolute bottom-3 left-3">
+                            <p class="text-white text-sm font-bold">Ambient Fairy Lights</p>
+                            <p class="text-white/80 text-[10px]">Recommended for evening</p>
+                        </div>
+                    </div>
+                `;
+            }, 2000);
+        }
+
+        function simulateARScan() {
+            const bg = document.getElementById('ar-bg');
+            const overlay = document.getElementById('ar-overlay');
+            const decor = document.getElementById('ar-decor');
+            const popup = document.getElementById('ar-popup');
+
+            // Reset
+            bg.style.opacity = '0';
+            overlay.style.display = 'flex';
+            decor.style.display = 'none';
+            popup.classList.remove('translate-y-0', 'opacity-100');
+            popup.classList.add('translate-y-4', 'opacity-0');
+
+            // Set Unsplash Room image
+            bg.src = "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=800";
+
+            setTimeout(() => {
+                // Reveal Room
+                bg.style.opacity = '1';
+                overlay.style.opacity = '0';
+
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    overlay.style.opacity = '1'; // reset for next time
+
+                    // Show AR Element
+                    decor.style.display = 'flex';
+                    setTimeout(() => {
+                        popup.classList.remove('translate-y-4', 'opacity-0');
+                        popup.classList.add('translate-y-0', 'opacity-100');
+                    }, 100);
+
+                }, 1000);
+            }, 2500);
         }
 
         function closeModal(id) {

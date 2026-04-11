@@ -143,29 +143,13 @@
             renderBottomNav('home');
 
             // Initialize Onboarding Tour
-            setTimeout(() => {
-                const hasSeenTour = localStorage.getItem('hasSeenTour');
-                if (!hasSeenTour) {
-                    const driverObj = window.driver.js.driver({
-                        showProgress: true,
-                        steps: [
-                            { element: 'header', popover: { title: 'Welcome to Smart Events!', description: 'The #1 Event Management Platform in Africa. Let\'s take a quick tour.', side: "bottom", align: 'start' }},
-                            { element: '.grid.grid-cols-2', popover: { title: 'Quick Stats', description: 'Track your active events and total funds collected right from the dashboard.', side: "bottom", align: 'start' }},
-                            { element: '.glass-card.rounded-3xl', popover: { title: 'Your Next Big Event', description: 'Get a quick glance at your upcoming event and its details.', side: "top", align: 'start' }},
-                            { element: '.grid.grid-cols-4', popover: { title: 'Quick Actions', description: 'Create new events, scan guests via QR, or add payments instantly.', side: "top", align: 'start' }},
-                            { element: '.glass-nav', popover: { title: 'Navigation', description: 'Access your Events, Contributions (Michango), and Profile from here.', side: "top", align: 'center' }}
-                        ],
-                        onDestroyStarted: () => {
-                            if (!driverObj.hasNextStep() || confirm("Are you sure you want to skip the tour?")) {
-                                localStorage.setItem('hasSeenTour', 'true');
-                                driverObj.destroy();
-                            }
-                        },
-                    });
-
-                    driverObj.drive();
-                }
-            }, 1000); // Small delay to let page render
+            initPageTour('home', [
+                { element: 'header', popover: { title: 'Welcome to Smart Events!', description: 'The #1 Event Management Platform in Africa. Let\'s take a quick tour.', side: "bottom", align: 'start' }},
+                { element: '.grid.grid-cols-2', popover: { title: 'Quick Stats', description: 'Track your active events and total funds collected right from the dashboard.', side: "bottom", align: 'start' }},
+                { element: '.glass-card.rounded-3xl', popover: { title: 'Your Next Big Event', description: 'Get a quick glance at your upcoming event and its details.', side: "top", align: 'start' }},
+                { element: '.grid.grid-cols-4', popover: { title: 'Quick Actions', description: 'Create new events, view your ticket, or add payments instantly.', side: "top", align: 'start' }},
+                { element: '.glass-nav', popover: { title: 'Navigation', description: 'Access your Events, Contributions (Michango), and Profile from here.', side: "top", align: 'center' }}
+            ]);
         });
     </script>
 </body>

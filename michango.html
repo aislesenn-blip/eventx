@@ -88,9 +88,7 @@
                 <!-- Transaction Item -->
                 <div class="bg-white p-3 rounded-xl border border-slate-100 shadow-sm flex items-center justify-between">
                     <div class="flex items-center">
-                        <div class="h-10 w-10 rounded-full bg-emerald-100 text-emerald-600 font-bold flex items-center justify-center mr-3 text-sm">
-                            A
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?auto=format&fit=crop&q=80&w=150" alt="Avatar" class="h-10 w-10 rounded-full object-cover mr-3 border border-slate-200">
                         <div>
                             <p class="text-sm font-bold text-slate-800">Aisha Juma</p>
                             <p class="text-[10px] text-slate-500">Today, 10:23 AM</p>
@@ -105,9 +103,7 @@
                 <!-- Transaction Item -->
                 <div class="bg-white p-3 rounded-xl border border-slate-100 shadow-sm flex items-center justify-between">
                     <div class="flex items-center">
-                        <div class="h-10 w-10 rounded-full bg-amber-100 text-amber-600 font-bold flex items-center justify-center mr-3 text-sm">
-                            J
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150" alt="Avatar" class="h-10 w-10 rounded-full object-cover mr-3 border border-slate-200">
                         <div>
                             <p class="text-sm font-bold text-slate-800">John Doe</p>
                             <p class="text-[10px] text-slate-500">Yesterday, 14:05 PM</p>
@@ -122,9 +118,7 @@
                  <!-- Transaction Item -->
                  <div class="bg-white p-3 rounded-xl border border-slate-100 shadow-sm flex items-center justify-between">
                     <div class="flex items-center">
-                        <div class="h-10 w-10 rounded-full bg-emerald-100 text-emerald-600 font-bold flex items-center justify-center mr-3 text-sm">
-                            M
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Avatar" class="h-10 w-10 rounded-full object-cover mr-3 border border-slate-200">
                         <div>
                             <p class="text-sm font-bold text-slate-800">Mary Mushi</p>
                             <p class="text-[10px] text-slate-500">12 Oct, 09:10 AM</p>
@@ -184,10 +178,20 @@
     </style>
 
     <script src="js/i18n.js"></script>
+    <!-- Driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
     <script src="js/app.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             renderBottomNav('michango');
+
+            initPageTour('michango', [
+                { element: '.bg-gradient-to-br', popover: { title: 'Contribution Overview', description: 'Track your total collected funds and progress towards your target at a glance.', side: "bottom", align: 'start' }},
+                { element: 'button[onclick="openPaymentModal()"]', popover: { title: 'Simulate Payments', description: 'Tap here to demo Mobile Money or Bank Transfer collections.', side: "top", align: 'center' }},
+                { element: '.grid.grid-cols-2.gap-4', popover: { title: 'Paid vs Pledges', description: 'See the breakdown of actual cash received versus promised pledges.', side: "top", align: 'start' }}
+            ]);
         });
 
         function openPaymentModal() {

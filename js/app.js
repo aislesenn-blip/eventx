@@ -74,3 +74,25 @@ function formatTZS(amount) {
         minimumFractionDigits: 0
     }).format(amount);
 }
+
+// Global utility for page-specific tours
+function initPageTour(pageId, steps) {
+    setTimeout(() => {
+        const tourKey = `hasSeenTour_${pageId}`;
+        const hasSeenTour = localStorage.getItem(tourKey);
+
+        if (!hasSeenTour && window.driver) {
+            const driverObj = window.driver.js.driver({
+                showProgress: true,
+                steps: steps,
+                onDestroyStarted: () => {
+                    if (!driverObj.hasNextStep() || confirm("Skip the rest of this tour?")) {
+                        localStorage.setItem(tourKey, 'true');
+                        driverObj.destroy();
+                    }
+                },
+            });
+            driverObj.drive();
+        }
+    }, 1000);
+}
