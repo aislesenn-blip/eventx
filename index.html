@@ -28,7 +28,7 @@
 <body class="bg-slate-50 min-h-screen">
 
     <!-- Header -->
-    <header class="pt-8 pb-4 px-6">
+    <header class="pt-8 pb-4 px-6 max-w-7xl mx-auto">
         <div class="flex justify-between items-center mb-6">
             <div>
                 <p class="text-sm text-slate-500 mb-1 flex items-center"><span data-i18n="welcome">Karibu</span></p>
@@ -48,9 +48,9 @@
         </div>
     </header>
 
-    <main class="px-6 space-y-6">
+    <main class="px-6 space-y-6 max-w-7xl mx-auto">
         <!-- Quick Stats -->
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             <div class="glass-card rounded-2xl p-4 hover-lift">
                 <div class="h-10 w-10 rounded-full bg-fuchsia-100 flex items-center justify-center mb-3">
                     <i class="ph ph-calendar-check text-fuchsia-600 text-xl"></i>
@@ -101,9 +101,9 @@
         </div>
 
         <!-- Quick Actions -->
-        <div class="pb-6">
+        <div class="pb-6 md:pb-12">
             <h2 class="text-lg font-bold text-slate-800 mb-4" data-i18n="overview">Quick Actions</h2>
-            <div class="grid grid-cols-4 gap-3">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <a href="add-event.html" class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift block">
                     <div class="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center mb-2">
                         <i class="ph ph-plus text-blue-500 text-xl"></i>
