@@ -1,156 +1,173 @@
 const translations = {
-    en: {
-        "welcome": "Welcome",
-        "overview": "Overview",
-        "active_events": "Active Events",
-        "total_collected": "Total Collected",
-        "next_event": "Next Event",
-        "view_all": "View all",
-        "new_event": "New Event",
-        "add_payment": "Add Payment",
-        "scan_guest": "Scan Guest",
-        "guests": "Guests",
-        "nav_home": "Home",
-        "nav_events": "Events",
-        "nav_michango": "Contributions",
-        "nav_profile": "Profile",
-        "nav_vendors": "Vendors",
-        "marketplace_title": "Marketplace",
-        "search_vendors": "Search caterers, decorators...",
-        "vendor_caterers": "Caterers",
-        "vendor_decorators": "Decorators",
-        "vendor_mcs": "MCs & DJs",
-        "vendor_venues": "Venues",
-        "book_now": "Book Now",
-        "top_rated": "Top Rated Vendors",
-        "my_events": "My Events",
-        "search_events": "Search events...",
-        "filter_all": "All",
-        "filter_weddings": "Weddings",
-        "filter_sendoffs": "Send-offs",
-        "filter_birthdays": "Birthdays",
-        "filter_conferences": "Conferences",
-        "filter_fundraising": "Fundraising",
-        "event_upcoming": "Upcoming",
-        "event_planning": "Planning",
-        "event_completed": "Completed",
-        "contributions": "Contributions",
-        "target": "Target",
-        "paid": "Paid",
-        "pledges": "Pledges",
-        "recent_transactions": "Recent Transactions",
-        "search_contributor": "Search contributor...",
-        "pledged": "PLEDGED",
-        "status_paid": "PAID",
-        "about_event": "About Event",
-        "committee": "Committee",
-        "edit_details": "Edit Details",
-        "view_michango": "View Contributions",
-        "chairman": "Chairman",
-        "treasurer": "Treasurer",
-        "add": "Add",
-        "lang_toggle": "SW",
-        "create_event": "Create New Event",
-        "event_name": "Event Name",
-        "event_type": "Event Type",
-        "filter_other": "Other (Custom)",
-        "custom_type": "Custom Event Type",
-        "date": "Date",
-        "time": "Time",
-        "location": "Location",
-        "cover_photo": "Cover Photo",
-        "upload_image": "Tap to upload image",
-        "save_event": "Create Event",
-        "ai_recommendations": "AI Recommendations",
-        "ar_preview": "AR Room Preview",
-        "ai_generating": "AI is generating luxury concepts...",
-        "ar_scanning": "Scanning room environment...",
-        "simulate_payment": "Simulate Payment",
-        "payment_method": "Payment Method",
-        "mobile_money": "Mobile Money (M-Pesa/Tigo)",
-        "bank_transfer": "Bank Transfer",
-        "amount": "Amount (TZS)",
-        "pay_now": "Pay Now",
-        "digital_pass": "Digital Pass",
-        "guest_name": "Guest Name",
-        "scan_instruction": "Show this code at the entrance",
-        "add_to_wallet": "Add to Apple Wallet"
-    },
-    sw: {
-        "welcome": "Karibu",
-        "overview": "Muhtasari",
-        "active_events": "Matukio Hai",
-        "total_collected": "Jumla Iliyokusanywa",
-        "next_event": "Tukio Lijalo",
-        "view_all": "Ona yote",
-        "new_event": "Tukio Jipya",
-        "add_payment": "Weka Malipo",
-        "scan_guest": "Skani Mgeni",
-        "guests": "Wageni",
-        "nav_home": "Mwanzo",
-        "nav_events": "Matukio",
-        "nav_michango": "Michango",
-        "nav_profile": "Wasifu",
-        "nav_vendors": "Watoa Huduma",
-        "marketplace_title": "Soko",
-        "search_vendors": "Tafuta wapishi, mapambo...",
-        "vendor_caterers": "Wapishi",
-        "vendor_decorators": "Mapambo",
-        "vendor_mcs": "MC na DJ",
-        "vendor_venues": "Kumbi",
-        "book_now": "Weka Oda",
-        "top_rated": "Watoa Huduma Bora",
-        "my_events": "Matukio Yangu",
-        "search_events": "Tafuta matukio...",
-        "filter_all": "Yote",
-        "filter_weddings": "Harusi",
-        "filter_sendoffs": "Send-off",
-        "filter_birthdays": "Siku za Kuzaliwa",
-        "filter_conferences": "Mikutano",
-        "filter_fundraising": "Harambee",
-        "event_upcoming": "Inakuja",
-        "event_planning": "Inapangwa",
-        "event_completed": "Imekamilika",
-        "contributions": "Michango",
-        "target": "Lengo",
-        "paid": "Imelipwa",
-        "pledges": "Ahadi",
-        "recent_transactions": "Miamala ya Hivi Karibuni",
-        "search_contributor": "Tafuta mchangiaji...",
-        "pledged": "AHADI",
-        "status_paid": "IMELIPWA",
-        "about_event": "Kuhusu Tukio",
-        "committee": "Kamati",
-        "edit_details": "Hariri Taarifa",
-        "view_michango": "Ona Michango",
-        "chairman": "Mwenyekiti",
-        "treasurer": "Mhasibu",
-        "add": "Ongeza",
-        "lang_toggle": "EN",
-        "create_event": "Tengeneza Tukio Jipya",
-        "event_name": "Jina la Tukio",
-        "event_type": "Aina ya Tukio",
-        "filter_other": "Nyingine (Bainisha)",
-        "custom_type": "Aina ya Tukio Lako",
-        "date": "Tarehe",
-        "time": "Muda",
-        "location": "Mahali",
-        "cover_photo": "Picha ya Juu",
-        "upload_image": "Gusa kuweka picha",
-        "save_event": "Tengeneza Tukio",
-        "ai_recommendations": "Mapendekezo ya AI",
-        "ar_preview": "Tazama Ukumbi 3D/AR",
-        "ai_generating": "AI inatengeneza mapendekezo mazuri...",
-        "ar_scanning": "Inachanganua mazingira ya ukumbi...",
-        "simulate_payment": "Fanya Malipo (Demo)",
-        "payment_method": "Njia ya Malipo",
-        "mobile_money": "Mitandao ya Simu",
-        "bank_transfer": "Uhamisho wa Benki",
-        "amount": "Kiasi (TZS)",
-        "pay_now": "Lipa Sasa",
-        "digital_pass": "Tiketi ya Dijitali",
-        "guest_name": "Jina la Mgeni",
-        "scan_instruction": "Onyesha kodi hii mlangoni",
-        "add_to_wallet": "Hifadhi kwenye Simu"
-    }
+  en: {
+    // Navigation
+    'nav.home': 'Home',
+    'nav.search': 'Find Houses',
+    'nav.workspace': 'My Workspace',
+    'nav.landlord': 'Landlords',
+    'nav.admin': 'Admin',
+    'nav.login': 'Log In',
+    'nav.signup': 'Sign Up',
+
+    // Landing Page
+    'landing.title': 'Trusted Student Housing Infrastructure',
+    'landing.subtitle': 'UNIMONDAY is more than just a housing search app. It’s a complete operating system for student rentals—from discovery to daily living, managing bills, contracts, and roommate relationships.',
+    'landing.cta.student': 'Find a Verified House',
+    'landing.cta.landlord': 'List Your Property',
+    'landing.features.title': 'Why UNIMONDAY?',
+    'landing.feature1.title': 'Verified Listings Only',
+    'landing.feature1.desc': 'No fake listings. Every property and landlord is verified by our team.',
+    'landing.feature2.title': 'Smart Contracts',
+    'landing.feature2.desc': 'Clear, digital rental agreements that protect both you and your landlord.',
+    'landing.feature3.title': 'Shared Workspace',
+    'landing.feature3.desc': 'Manage utility bills, cleaning schedules, and house rules with your roommates.',
+
+    // Student Interface
+    'student.title': 'Find Your Perfect Student Home',
+    'student.search.placeholder': 'Search by university, area, or budget...',
+    'student.filter.budget': 'Budget Range',
+    'student.filter.type': 'Room Type',
+    'student.filter.gender': 'Gender Preference',
+    'student.btn.search': 'Search Listings',
+
+    // Shared Workspace
+    'workspace.title': 'My House Workspace',
+    'workspace.utilities': 'Utility Bills',
+    'workspace.cleaning': 'Cleaning Schedule',
+    'workspace.rules': 'House Rules',
+    'workspace.notices': 'Notices',
+
+    // Landlord Dashboard
+    'landlord.title': 'Landlord Dashboard',
+    'landlord.properties': 'My Properties',
+    'landlord.tenants': 'Tenants',
+    'landlord.contracts': 'Contracts',
+    'landlord.payments': 'Payments',
+
+    // Admin Panel
+    'admin.title': 'UNIMONDAY Control Center',
+    'admin.verification': 'Landlord Verification',
+    'admin.moderation': 'Listing Moderation',
+    'admin.disputes': 'Dispute Oversight',
+
+    // General
+    'lang.toggle': 'Swahili',
+    'btn.apply': 'Apply Now',
+    'btn.save': 'Save',
+    'btn.cancel': 'Cancel'
+  },
+  sw: {
+    // Navigation
+    'nav.home': 'Mwanzo',
+    'nav.search': 'Tafuta Nyumba',
+    'nav.workspace': 'Nyumbani Kwangu',
+    'nav.landlord': 'Wapangishaji',
+    'nav.admin': 'Utawala',
+    'nav.login': 'Ingia',
+    'nav.signup': 'Jisajili',
+
+    // Landing Page
+    'landing.title': 'Mfumo wa Kuaminika wa Makazi ya Wanafunzi',
+    'landing.subtitle': 'UNIMONDAY si app ya kutafuta nyumba tu. Ni mfumo kamili wa kusimamia maisha ya upangaji kwa wanafunzi wa vyuo—kutoka kutafuta nyumba hadi kuishi ndani ya nyumba, kusimamia bili, mikataba, na mahusiano kati ya landlord na wapangaji.',
+    'landing.cta.student': 'Tafuta Nyumba Iliyohakikiwa',
+    'landing.cta.landlord': 'Pangisha Nyumba Yako',
+    'landing.features.title': 'Kwanini UNIMONDAY?',
+    'landing.feature1.title': 'Nyumba Zilizohakikiwa Tu',
+    'landing.feature1.desc': 'Hakuna nyumba feki. Kila nyumba na mwenye nyumba amehakikiwa na timu yetu.',
+    'landing.feature2.title': 'Mikataba ya Kidijitali',
+    'landing.feature2.desc': 'Mikataba ya upangaji iliyo wazi, inayokulinda wewe na mwenye nyumba wako.',
+    'landing.feature3.title': 'Usimamizi wa Pamoja',
+    'landing.feature3.desc': 'Simamia bili za matumizi, ratiba za usafi, na sheria za nyumba pamoja na wenzako.',
+
+    // Student Interface
+    'student.title': 'Tafuta Makazi Sahihi ya Mwanafunzi',
+    'student.search.placeholder': 'Tafuta kwa chuo, eneo, au bajeti...',
+    'student.filter.budget': 'Kiwango cha Bajeti',
+    'student.filter.type': 'Aina ya Chumba',
+    'student.filter.gender': 'Upendeleo wa Jinsia',
+    'student.btn.search': 'Tafuta Nyumba',
+
+    // Shared Workspace
+    'workspace.title': 'Usimamizi wa Nyumba Yangu',
+    'workspace.utilities': 'Bili za Matumizi',
+    'workspace.cleaning': 'Ratiba ya Usafi',
+    'workspace.rules': 'Sheria za Nyumba',
+    'workspace.notices': 'Matangazo',
+
+    // Landlord Dashboard
+    'landlord.title': 'Dashibodi ya Mwenye Nyumba',
+    'landlord.properties': 'Nyumba Zangu',
+    'landlord.tenants': 'Wapangaji',
+    'landlord.contracts': 'Mikataba',
+    'landlord.payments': 'Malipo',
+
+    // Admin Panel
+    'admin.title': 'Kituo cha Uthibiti cha UNIMONDAY',
+    'admin.verification': 'Uhakiki wa Wamiliki',
+    'admin.moderation': 'Usimamizi wa Nyumba',
+    'admin.disputes': 'Usimamizi wa Migogoro',
+
+    // General
+    'lang.toggle': 'English',
+    'btn.apply': 'Tuma Maombi',
+    'btn.save': 'Hifadhi',
+    'btn.cancel': 'Ghairi'
+  }
 };
+
+class I18nManager {
+  constructor() {
+    this.currentLang = localStorage.getItem('unimonday_lang') || 'en';
+    this.init();
+  }
+
+  init() {
+    this.applyTranslations();
+    this.updateToggleButton();
+  }
+
+  toggleLanguage() {
+    this.currentLang = this.currentLang === 'en' ? 'sw' : 'en';
+    localStorage.setItem('unimonday_lang', this.currentLang);
+    this.applyTranslations();
+    this.updateToggleButton();
+  }
+
+  applyTranslations() {
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[this.currentLang][key]) {
+        el.textContent = translations[this.currentLang][key];
+      }
+    });
+
+    const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
+    placeholders.forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (translations[this.currentLang][key]) {
+        el.setAttribute('placeholder', translations[this.currentLang][key]);
+      }
+    });
+  }
+
+  updateToggleButton() {
+    const toggleBtn = document.getElementById('lang-toggle');
+    if (toggleBtn) {
+      // If we are in English, the button should say "Swahili"
+      toggleBtn.textContent = translations[this.currentLang]['lang.toggle'];
+    }
+  }
+}
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', () => {
+  window.i18n = new I18nManager();
+
+  const toggleBtn = document.getElementById('lang-toggle');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      window.i18n.toggleLanguage();
+    });
+  }
+});
