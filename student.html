@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Houses - UNIMONDAY</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-slate-50 antialiased text-slate-800">
+
+    <!-- Navigation (Simplified for subpages) -->
+    <nav class="fixed w-full z-50 glass border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2">
+                    <i class="ph-fill ph-house-line text-2xl text-slate-900"></i>
+                    <span class="font-bold text-lg tracking-tight text-slate-900">UNIMONDAY</span>
+                </a>
+
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="student.html" class="text-blue-600 font-medium" data-i18n="nav.search">Find Houses</a>
+                    <a href="workspace.html" class="text-slate-600 hover:text-slate-900 transition-colors" data-i18n="nav.workspace">My Workspace</a>
+                    <div class="h-5 w-px bg-slate-300 mx-2"></div>
+                    <button id="lang-toggle" class="text-sm font-medium text-slate-600 hover:text-slate-900 flex items-center gap-1">
+                        <i class="ph ph-translate"></i>
+                        <span data-i18n="lang.toggle">Swahili</span>
+                    </button>
+                    <!-- User Avatar Placeholder (Unsplash) -->
+                    <img id="user-avatar" src="" alt="Profile" class="w-8 h-8 rounded-full object-cover border border-slate-200">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-12 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Header & Search -->
+            <div class="mb-10 animate-fade-in">
+                <h1 class="text-3xl font-bold text-slate-900 mb-2" data-i18n="student.title" id="tour-student-title">Find Your Perfect Student Home</h1>
+                <p class="text-slate-500 mb-8">Browse 100% verified listings from trusted landlords.</p>
+
+                <!-- Search Bar -->
+                <div class="glass p-4 rounded-2xl flex flex-col md:flex-row gap-4 items-center border border-slate-200 shadow-sm" id="tour-search-bar">
+                    <div class="flex-1 w-full relative">
+                        <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
+                        <input type="text" data-i18n-placeholder="student.search.placeholder" placeholder="Search by university, area, or budget..." class="w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                    </div>
+                    <button class="btn-premium w-full md:w-auto py-3 px-8 whitespace-nowrap">
+                        <i class="ph ph-sliders-horizontal"></i>
+                        Filters
+                    </button>
+                    <button class="btn-premium w-full md:w-auto py-3 px-8 whitespace-nowrap bg-blue-600 hover:bg-blue-700 text-white" data-i18n="student.btn.search">
+                        Search Listings
+                    </button>
+                </div>
+
+                <!-- Quick Filters -->
+                <div class="flex gap-3 mt-4 overflow-x-auto pb-2 no-scrollbar">
+                    <button class="px-4 py-1.5 rounded-full border border-slate-200 bg-white text-sm font-medium text-slate-600 hover:border-blue-500 hover:text-blue-600 transition-colors whitespace-nowrap" data-i18n="student.filter.type">Room Type</button>
+                    <button class="px-4 py-1.5 rounded-full border border-slate-200 bg-white text-sm font-medium text-slate-600 hover:border-blue-500 hover:text-blue-600 transition-colors whitespace-nowrap" data-i18n="student.filter.budget">Budget Range</button>
+                    <button class="px-4 py-1.5 rounded-full border border-slate-200 bg-white text-sm font-medium text-slate-600 hover:border-blue-500 hover:text-blue-600 transition-colors whitespace-nowrap" data-i18n="student.filter.gender">Gender Preference</button>
+                    <button class="px-4 py-1.5 rounded-full border border-slate-200 bg-white text-sm font-medium text-slate-600 hover:border-blue-500 hover:text-blue-600 transition-colors whitespace-nowrap">Furnished</button>
+                    <button class="px-4 py-1.5 rounded-full border border-slate-200 bg-white text-sm font-medium text-slate-600 hover:border-blue-500 hover:text-blue-600 transition-colors whitespace-nowrap">Near Campus</button>
+                </div>
+            </div>
+
+            <!-- Listings Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Listing Card 1 -->
+                <div class="glass rounded-3xl overflow-hidden hover-lift border border-slate-100 bg-white flex flex-col h-full animate-fade-in delay-100">
+                    <div class="relative h-60">
+                        <img id="house-img-1" src="" alt="House" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-blue-700 flex items-center gap-1">
+                            <i class="ph-fill ph-check-circle"></i> Verified
+                        </div>
+                        <div class="absolute bottom-4 right-4 bg-slate-900/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-white">
+                            $250 / month
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-xl text-slate-900 line-clamp-1">Premium Shared Studio</h3>
+                            <div class="flex items-center gap-1 text-slate-500 text-sm">
+                                <i class="ph-fill ph-star text-amber-400"></i> 4.9
+                            </div>
+                        </div>
+                        <p class="text-slate-500 text-sm mb-4 flex items-center gap-1">
+                            <i class="ph ph-map-pin"></i> 5 mins from Main Campus
+                        </p>
+
+                        <!-- Smart Match Data -->
+                        <div class="bg-slate-50 rounded-xl p-3 mb-6 border border-slate-100">
+                            <p class="text-xs font-semibold text-slate-500 mb-2 uppercase tracking-wider">Current Housemates</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex -space-x-2">
+                                    <img id="avatar-1" src="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+                                    <img id="avatar-2" src="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+                                </div>
+                                <span class="text-xs font-medium text-slate-600 bg-white px-2 py-1 rounded border border-slate-200">2 / 3 spots filled</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-auto flex gap-3">
+                            <button class="btn-premium-outline flex-1 py-2 text-sm">View Details</button>
+                            <button class="btn-premium flex-1 py-2 text-sm bg-slate-900 text-white" data-i18n="btn.apply">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Listing Card 2 -->
+                <div class="glass rounded-3xl overflow-hidden hover-lift border border-slate-100 bg-white flex flex-col h-full animate-fade-in delay-200">
+                    <div class="relative h-60">
+                        <img id="house-img-2" src="" alt="House" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-blue-700 flex items-center gap-1">
+                            <i class="ph-fill ph-check-circle"></i> Verified
+                        </div>
+                        <div class="absolute bottom-4 right-4 bg-slate-900/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-white">
+                            $400 / month
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-xl text-slate-900 line-clamp-1">Private 1-Bedroom Appt</h3>
+                            <div class="flex items-center gap-1 text-slate-500 text-sm">
+                                <i class="ph-fill ph-star text-amber-400"></i> 5.0
+                            </div>
+                        </div>
+                        <p class="text-slate-500 text-sm mb-4 flex items-center gap-1">
+                            <i class="ph ph-map-pin"></i> City Center
+                        </p>
+
+                        <div class="bg-slate-50 rounded-xl p-3 mb-6 border border-slate-100">
+                            <p class="text-xs font-semibold text-slate-500 mb-2 uppercase tracking-wider">Property Highlights</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs font-medium text-slate-600 bg-white px-2 py-1 rounded border border-slate-200 flex items-center gap-1"><i class="ph ph-wifi-high"></i> Fast WiFi</span>
+                                <span class="text-xs font-medium text-slate-600 bg-white px-2 py-1 rounded border border-slate-200 flex items-center gap-1"><i class="ph ph-armchair"></i> Furnished</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-auto flex gap-3">
+                            <button class="btn-premium-outline flex-1 py-2 text-sm">View Details</button>
+                            <button class="btn-premium flex-1 py-2 text-sm bg-slate-900 text-white" data-i18n="btn.apply">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Listing Card 3 -->
+                <div class="glass rounded-3xl overflow-hidden hover-lift border border-slate-100 bg-white flex flex-col h-full animate-fade-in delay-300">
+                    <div class="relative h-60">
+                        <img id="house-img-3" src="" alt="House" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-blue-700 flex items-center gap-1">
+                            <i class="ph-fill ph-check-circle"></i> Verified
+                        </div>
+                        <div class="absolute bottom-4 right-4 bg-slate-900/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-white">
+                            $150 / month
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-xl text-slate-900 line-clamp-1">Budget Shared Room</h3>
+                            <div class="flex items-center gap-1 text-slate-500 text-sm">
+                                <i class="ph-fill ph-star text-amber-400"></i> 4.5
+                            </div>
+                        </div>
+                        <p class="text-slate-500 text-sm mb-4 flex items-center gap-1">
+                            <i class="ph ph-map-pin"></i> 15 mins by bus
+                        </p>
+
+                        <div class="bg-slate-50 rounded-xl p-3 mb-6 border border-slate-100">
+                            <p class="text-xs font-semibold text-slate-500 mb-2 uppercase tracking-wider">Current Housemates</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex -space-x-2">
+                                    <img id="avatar-3" src="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+                                </div>
+                                <span class="text-xs font-medium text-slate-600 bg-white px-2 py-1 rounded border border-slate-200">1 / 2 spots filled</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-auto flex gap-3">
+                            <button class="btn-premium-outline flex-1 py-2 text-sm">View Details</button>
+                            <button class="btn-premium flex-1 py-2 text-sm bg-slate-900 text-white" data-i18n="btn.apply">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

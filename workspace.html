@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Workspace - UNIMONDAY</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-slate-50 antialiased text-slate-800">
+
+    <nav class="fixed w-full z-50 glass border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2">
+                    <i class="ph-fill ph-house-line text-2xl text-slate-900"></i>
+                    <span class="font-bold text-lg tracking-tight text-slate-900">UNIMONDAY</span>
+                </a>
+
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="student.html" class="text-slate-600 hover:text-slate-900 transition-colors" data-i18n="nav.search">Find Houses</a>
+                    <a href="workspace.html" class="text-blue-600 font-medium" data-i18n="nav.workspace">My Workspace</a>
+                    <div class="h-5 w-px bg-slate-300 mx-2"></div>
+                    <button id="lang-toggle" class="text-sm font-medium text-slate-600 hover:text-slate-900 flex items-center gap-1">
+                        <i class="ph ph-translate"></i>
+                        <span data-i18n="lang.toggle">Swahili</span>
+                    </button>
+                    <img id="ws-user-avatar" src="" alt="Profile" class="w-8 h-8 rounded-full object-cover border border-slate-200">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-12 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="mb-8 animate-fade-in flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl font-bold text-slate-900 mb-1" data-i18n="workspace.title" id="tour-workspace-title">My House Workspace</h1>
+                    <p class="text-slate-500">Block B, Apartment 4B • 3 Housemates</p>
+                </div>
+                <button class="btn-premium py-2 px-6 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200" id="tour-report-issue">
+                    <i class="ph ph-warning-circle"></i> Report Issue
+                </button>
+            </div>
+
+            <!-- Workspace Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                <!-- Main Content Column -->
+                <div class="lg:col-span-2 space-y-8">
+
+                    <!-- Utility Bills -->
+                    <div class="glass p-6 rounded-3xl border border-slate-200 bg-white animate-fade-in delay-100" id="tour-utilities">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                                <i class="ph-fill ph-lightning text-amber-500"></i>
+                                <span data-i18n="workspace.utilities">Utility Bills</span>
+                            </h2>
+                            <button class="text-sm text-blue-600 font-medium hover:underline">Add Bill</button>
+                        </div>
+
+                        <div class="space-y-4">
+                            <!-- Electricity Bill -->
+                            <div class="flex items-center justify-between p-4 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="ph-fill ph-lightning text-blue-600 text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-slate-900">Electricity (LUKU)</h3>
+                                        <p class="text-xs text-slate-500">Due in 3 days • Split 3 ways</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-bold text-slate-900">$45.00</p>
+                                    <p class="text-xs font-medium text-red-500">Your Share: $15.00</p>
+                                </div>
+                                <button class="ml-4 btn-premium py-1.5 px-4 text-xs">Pay</button>
+                            </div>
+
+                            <!-- Water Bill -->
+                            <div class="flex items-center justify-between p-4 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-cyan-100 flex items-center justify-center">
+                                        <i class="ph-fill ph-drop text-cyan-600 text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-slate-900">Water</h3>
+                                        <p class="text-xs text-slate-500">Paid • Split 3 ways</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-bold text-slate-900">$12.00</p>
+                                    <p class="text-xs font-medium text-emerald-500">Settled</p>
+                                </div>
+                                <div class="ml-4 w-[72px]"></div> <!-- Spacer to match layout -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cleaning Schedule -->
+                    <div class="glass p-6 rounded-3xl border border-slate-200 bg-white animate-fade-in delay-200" id="tour-cleaning">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                                <i class="ph-fill ph-sparkle text-purple-500"></i>
+                                <span data-i18n="workspace.cleaning">Cleaning Schedule</span>
+                            </h2>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-4 rounded-2xl border border-blue-200 bg-blue-50 relative overflow-hidden">
+                                <div class="absolute top-0 right-0 p-3">
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded-full">This Week</span>
+                                </div>
+                                <h3 class="font-semibold text-slate-900 mb-1">Kitchen & Living</h3>
+                                <p class="text-sm text-slate-600 mb-3">Your turn</p>
+                                <button class="btn-premium py-1.5 px-4 text-xs w-full bg-blue-600 text-white border-none">Mark Complete</button>
+                            </div>
+                            <div class="p-4 rounded-2xl border border-slate-200 bg-slate-50">
+                                <h3 class="font-semibold text-slate-900 mb-1">Bathroom</h3>
+                                <div class="flex items-center gap-2 mt-2">
+                                    <img id="ws-avatar-1" src="" class="w-6 h-6 rounded-full object-cover">
+                                    <p class="text-sm text-slate-600">John's turn</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar Column -->
+                <div class="space-y-8">
+
+                    <!-- House Rules -->
+                    <div class="glass p-6 rounded-3xl border border-slate-200 bg-white animate-fade-in delay-300" id="tour-rules">
+                        <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2 mb-4">
+                            <i class="ph-fill ph-scroll text-slate-700"></i>
+                            <span data-i18n="workspace.rules">House Rules</span>
+                        </h2>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <i class="ph ph-check-circle text-emerald-500 mt-0.5"></i>
+                                <span>Quiet hours from 10 PM to 7 AM.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="ph ph-check-circle text-emerald-500 mt-0.5"></i>
+                                <span>No overnight guests without 24h notice.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="ph ph-check-circle text-emerald-500 mt-0.5"></i>
+                                <span>Clean shared spaces immediately after use.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Notices -->
+                    <div class="glass p-6 rounded-3xl border border-slate-200 bg-slate-900 text-white animate-fade-in delay-300" id="tour-notices">
+                        <h2 class="text-lg font-bold flex items-center gap-2 mb-4">
+                            <i class="ph-fill ph-bell-ringing text-blue-400"></i>
+                            <span data-i18n="workspace.notices">Notices</span>
+                        </h2>
+                        <div class="p-4 rounded-xl bg-white/10 border border-white/20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-bold text-blue-300 uppercase">From Landlord</span>
+                                <span class="text-xs text-slate-400">Yesterday</span>
+                            </div>
+                            <p class="text-sm text-slate-200">Maintenance will be checking the AC units this Friday between 10 AM and 2 PM. Please ensure rooms are accessible.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

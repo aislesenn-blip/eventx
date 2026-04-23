@@ -3,154 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Events - Dashboard</title>
+    <title>UNIMONDAY - Student Housing Operating System</title>
+
+    <!-- Tailwind CSS (via CDN for no-build setup) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="css/style.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        fuchsia: {
-                            50: '#fdf4ff',
-                            100: '#fae8ff',
-                            500: '#d946ef',
-                            600: '#c026d3',
-                            700: '#a21caf',
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            800: '#1e293b',
+                            900: '#0f172a',
                         }
                     }
                 }
             }
         }
     </script>
-</head>
-<body class="bg-slate-50 min-h-screen">
 
-    <!-- Header -->
-    <header class="pt-8 pb-4 px-6 max-w-7xl mx-auto">
-        <div class="flex justify-between items-center mb-6">
-            <div>
-                <p class="text-sm text-slate-500 mb-1 flex items-center"><span data-i18n="welcome">Karibu</span></p>
-                <h1 class="text-2xl font-bold text-slate-800" data-i18n="overview">Overview</h1>
-            </div>
-            <div class="flex items-center space-x-3">
-                <!-- Premium Crown Badge -->
-                <div class="hidden sm:flex items-center px-2 py-1 bg-gradient-to-r from-amber-100 to-amber-50 rounded-lg border border-amber-200">
-                    <i class="ph ph-crown text-amber-500 mr-1"></i>
-                    <span class="text-[10px] font-bold text-amber-700">PRO</span>
-                </div>
-                <button onclick="toggleLanguage()" class="text-xs font-bold bg-white px-2 py-1 rounded border border-slate-200 text-slate-600 shadow-sm" data-i18n="lang_toggle">SW</button>
-                <div class="h-10 w-10 rounded-full bg-slate-200 overflow-hidden border-2 border-white shadow-sm flex items-center justify-center">
-                     <i class="ph ph-user text-xl text-slate-500"></i>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <main class="px-6 space-y-6 max-w-7xl mx-auto">
-        <!-- Quick Stats -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="glass-card rounded-2xl p-4 hover-lift">
-                <div class="h-10 w-10 rounded-full bg-fuchsia-100 flex items-center justify-center mb-3">
-                    <i class="ph ph-calendar-check text-fuchsia-600 text-xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-slate-800">12</h3>
-                <p class="text-xs text-slate-500 font-medium mt-1" data-i18n="active_events">Active Events</p>
-            </div>
-            <div class="glass-card rounded-2xl p-4 hover-lift">
-                <div class="h-10 w-10 rounded-full bg-emerald-100 flex items-center justify-center mb-3">
-                    <i class="ph ph-wallet text-emerald-600 text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-slate-800">TZS 4.5M</h3>
-                <p class="text-xs text-slate-500 font-medium mt-1" data-i18n="total_collected">Total Collected</p>
-            </div>
-        </div>
-
-        <!-- Upcoming Event -->
-        <div>
-            <div class="flex justify-between items-end mb-4">
-                <h2 class="text-lg font-bold text-slate-800" data-i18n="next_event">Next Event</h2>
-                <a href="events.html" class="text-sm text-fuchsia-600 font-medium" data-i18n="view_all">View all</a>
-            </div>
-
-            <a href="event-details.html" class="block">
-                <div class="glass-card rounded-3xl overflow-hidden hover-lift group relative">
-                    <div class="h-48 w-full overflow-hidden relative">
-                        <!-- Unsplash Image for Wedding -->
-                        <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=800" alt="Wedding Event" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-fuchsia-600 shadow-sm">
-                            24 Oct
-                        </div>
-                    </div>
-
-                    <div class="p-5 absolute bottom-0 w-full">
-                        <span class="inline-block px-2 py-1 bg-white/20 backdrop-blur-md rounded text-[10px] font-bold text-white mb-2 uppercase tracking-wider" data-i18n="filter_weddings">
-                            Wedding
-                        </span>
-                        <h3 class="text-xl font-bold text-white mb-1 leading-tight">Aisha & Ali Wedding</h3>
-                        <div class="flex items-center text-slate-200 text-xs">
-                            <i class="ph ph-map-pin mr-1"></i>
-                            Mlimani City Hall, Dar es Salaam
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <!-- Quick Actions -->
-        <div class="pb-6 md:pb-12">
-            <h2 class="text-lg font-bold text-slate-800 mb-4" data-i18n="overview">Quick Actions</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <a href="add-event.html" class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift block">
-                    <div class="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center mb-2">
-                        <i class="ph ph-plus text-blue-500 text-xl"></i>
-                    </div>
-                    <span class="text-[10px] font-medium text-slate-600 text-center" data-i18n="new_event">New Event</span>
-                </a>
-                <button class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift">
-                    <div class="h-12 w-12 rounded-full bg-emerald-50 flex items-center justify-center mb-2 relative">
-                        <i class="ph ph-money text-emerald-500 text-xl"></i>
-                    </div>
-                    <span class="text-[10px] font-medium text-slate-600 text-center" data-i18n="add_payment">Add Payment</span>
-                </button>
-                <a href="ticket.html" class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift block">
-                    <div class="h-12 w-12 rounded-full bg-amber-50 flex items-center justify-center mb-2">
-                        <i class="ph ph-qr-code text-amber-500 text-xl"></i>
-                    </div>
-                    <span class="text-[10px] font-medium text-slate-600 text-center" data-i18n="scan_guest">My Ticket</span>
-                </a>
-                <button class="flex flex-col items-center justify-center p-3 glass-card rounded-2xl hover-lift">
-                    <div class="h-12 w-12 rounded-full bg-purple-50 flex items-center justify-center mb-2">
-                        <i class="ph ph-users text-purple-500 text-xl"></i>
-                    </div>
-                    <span class="text-[10px] font-medium text-slate-600 text-center" data-i18n="guests">Guests</span>
-                </button>
-            </div>
-        </div>
-    </main>
-
-    <script src="js/i18n.js"></script>
-    <!-- Driver.js -->
+    <!-- Driver.js for onboarding -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
     <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
 
-    <script src="js/app.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            renderBottomNav('home');
+    <!-- Custom Luxury Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-slate-50 antialiased text-slate-800">
 
-            // Initialize Onboarding Tour
-            initPageTour('home', [
-                { element: 'header', popover: { title: 'Welcome to Smart Events!', description: 'The #1 Event Management Platform in Africa. Let\'s take a quick tour.', side: "bottom", align: 'start' }},
-                { element: '.grid.grid-cols-2', popover: { title: 'Quick Stats', description: 'Track your active events and total funds collected right from the dashboard.', side: "bottom", align: 'start' }},
-                { element: '.glass-card.rounded-3xl', popover: { title: 'Your Next Big Event', description: 'Get a quick glance at your upcoming event and its details.', side: "top", align: 'start' }},
-                { element: '.grid.grid-cols-4', popover: { title: 'Quick Actions', description: 'Create new events, view your ticket, or add payments instantly.', side: "top", align: 'start' }},
-                { element: '.glass-nav', popover: { title: 'Navigation', description: 'Access your Events, Contributions (Michango), and Profile from here.', side: "top", align: 'center' }}
-            ]);
-        });
-    </script>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/20 transition-all duration-300" id="main-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" id="logo-tour">
+                    <i class="ph-fill ph-house-line text-3xl text-slate-900"></i>
+                    <span class="font-bold text-xl tracking-tight text-slate-900">UNIMONDAY</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-slate-900 font-medium hover:text-blue-600 transition-colors" data-i18n="nav.home">Home</a>
+                    <a href="student.html" class="text-slate-600 hover:text-slate-900 transition-colors" data-i18n="nav.search">Find Houses</a>
+                    <a href="workspace.html" class="text-slate-600 hover:text-slate-900 transition-colors" data-i18n="nav.workspace">My Workspace</a>
+                    <a href="landlord.html" class="text-slate-600 hover:text-slate-900 transition-colors" data-i18n="nav.landlord">Landlords</a>
+
+                    <div class="h-6 w-px bg-slate-300 mx-2"></div>
+
+                    <button id="lang-toggle" class="text-sm font-medium text-slate-600 hover:text-slate-900 flex items-center gap-1 transition-colors">
+                        <i class="ph ph-translate"></i>
+                        <span data-i18n="lang.toggle">Swahili</span>
+                    </button>
+
+                    <a href="#" class="btn-premium-outline text-sm py-2 px-4" data-i18n="nav.login">Log In</a>
+                    <a href="#" class="btn-premium text-sm py-2 px-5" data-i18n="nav.signup">Sign Up</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <button id="mobile-lang-toggle" class="text-sm font-medium text-slate-600">
+                        <i class="ph ph-translate text-xl"></i>
+                    </button>
+                    <button class="text-slate-900 focus:outline-none" id="mobile-menu-btn">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gradient-premium">
+        <!-- Abstract Background Elements -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] opacity-30 pointer-events-none">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-200 to-indigo-100 rounded-full blur-3xl filter transform -translate-y-1/2"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto animate-fade-in">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-6">Operating System for Student Housing</span>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-slate-900 leading-tight">
+                    <span class="text-gradient" data-i18n="landing.title">Trusted Student Housing Infrastructure</span>
+                </h1>
+                <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto font-light leading-relaxed" data-i18n="landing.subtitle">
+                    UNIMONDAY is more than just a housing search app. It’s a complete operating system for student rentals—from discovery to daily living, managing bills, contracts, and roommate relationships.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="student.html" class="btn-premium w-full sm:w-auto text-lg py-4 px-8 hover-lift">
+                        <i class="ph ph-magnifying-glass text-xl"></i>
+                        <span data-i18n="landing.cta.student">Find a Verified House</span>
+                    </a>
+                    <a href="landlord.html" class="btn-premium-outline w-full sm:w-auto text-lg py-4 px-8 hover-lift bg-white">
+                        <i class="ph ph-house-line text-xl"></i>
+                        <span data-i18n="landing.cta.landlord">List Your Property</span>
+                    </a>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="mt-16 pt-8 border-t border-slate-200 flex flex-wrap justify-center gap-8 text-slate-500 text-sm font-medium opacity-70">
+                    <div class="flex items-center gap-2"><i class="ph-fill ph-shield-check text-xl"></i> 100% Verified Landlords</div>
+                    <div class="flex items-center gap-2"><i class="ph-fill ph-file-text text-xl"></i> Smart Digital Contracts</div>
+                    <div class="flex items-center gap-2"><i class="ph-fill ph-users-three text-xl"></i> Seamless Roommate Mgmt</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Problem / Solution Section -->
+    <section class="py-24 bg-white relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" data-i18n="landing.features.title">Why UNIMONDAY?</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">We are replacing the chaos of student renting with a transparent, trusted, and accountable digital ecosystem.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass p-8 rounded-3xl hover-lift bg-slate-50 border border-slate-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="ph-fill ph-shield-check text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="landing.feature1.title">Verified Listings Only</h3>
+                    <p class="text-slate-600" data-i18n="landing.feature1.desc">No fake listings. Every property and landlord is verified by our team before they can post.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass p-8 rounded-3xl hover-lift bg-slate-50 border border-slate-100">
+                    <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="ph-fill ph-file-text text-2xl text-emerald-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="landing.feature2.title">Smart Contracts</h3>
+                    <p class="text-slate-600" data-i18n="landing.feature2.desc">Clear, digital rental agreements that protect both you and your landlord with complete transparency.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass p-8 rounded-3xl hover-lift bg-slate-50 border border-slate-100">
+                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="ph-fill ph-users-three text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="landing.feature3.title">Shared Workspace</h3>
+                    <p class="text-slate-600" data-i18n="landing.feature3.desc">Manage utility bills, cleaning schedules, and house rules collaboratively with your roommates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Showcase -->
+    <section class="py-24 bg-slate-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="animate-fade-in">
+                    <h2 class="text-4xl font-bold mb-6 text-white">A Beautiful, Premium Experience</h2>
+                    <p class="text-slate-400 text-lg mb-8">Built with a focus on clean, intuitive, and luxury design. Finding a house shouldn't feel like navigating a 90s bulletin board.</p>
+
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-slate-300">
+                            <i class="ph-fill ph-check-circle text-blue-500 text-xl"></i>
+                            <span>High-quality, verified Unsplash photography</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-300">
+                            <i class="ph-fill ph-check-circle text-blue-500 text-xl"></i>
+                            <span>No emojis, no clutter, pure professional UI</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-300">
+                            <i class="ph-fill ph-check-circle text-blue-500 text-xl"></i>
+                            <span>Fully responsive for mobile and desktop</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="relative">
+                    <!-- Image container mimicking a clean UI card -->
+                    <div class="glass-dark rounded-3xl p-2 transform rotate-2 hover:rotate-0 transition-transform duration-500 shadow-2xl">
+                        <img id="showcase-img" src="" alt="Premium Housing" class="rounded-2xl w-full h-[400px] object-cover opacity-0 transition-opacity duration-1000">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <i class="ph-fill ph-house-line text-2xl text-slate-900"></i>
+                <span class="font-bold text-lg text-slate-900">UNIMONDAY</span>
+            </div>
+            <div class="text-slate-500 text-sm">
+                &copy; 2024 UNIMONDAY Operating System. All rights reserved.
+            </div>
+            <div class="flex gap-4">
+                <a href="admin.html" class="text-slate-400 hover:text-slate-900 transition-colors text-sm font-medium" data-i18n="nav.admin">Admin Panel</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

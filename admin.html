@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Control Center - UNIMONDAY</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-slate-900 antialiased text-slate-200"> <!-- Dark mode for Admin -->
+
+    <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2">
+                    <i class="ph-fill ph-shield-check text-2xl text-blue-500"></i>
+                    <span class="font-bold text-lg tracking-tight text-white">UNIMONDAY <span class="font-normal text-slate-400 text-sm ml-1">ADMIN</span></span>
+                </a>
+
+                <div class="hidden md:flex space-x-6 items-center">
+                    <button id="lang-toggle" class="text-sm font-medium text-slate-400 hover:text-white flex items-center gap-1">
+                        <i class="ph ph-translate"></i>
+                        <span data-i18n="lang.toggle">Swahili</span>
+                    </button>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center border border-slate-700">
+                            <i class="ph-fill ph-user text-slate-400"></i>
+                        </div>
+                        <span class="text-sm font-medium text-white">Super Admin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex pt-16 min-h-screen">
+
+        <!-- Sidebar Navigation -->
+        <aside class="w-64 bg-slate-900 border-r border-white/10 hidden md:block fixed h-full z-40">
+            <div class="p-6">
+                <nav class="space-y-2">
+                    <a href="#" class="flex items-center gap-3 px-4 py-2.5 bg-blue-600/10 text-blue-400 rounded-xl font-medium border border-blue-500/20">
+                        <i class="ph-fill ph-squares-four text-xl"></i>
+                        Dashboard
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:bg-white/5 hover:text-white rounded-xl font-medium transition-colors">
+                        <i class="ph ph-identification-card text-xl"></i>
+                        <span data-i18n="admin.verification">Verification</span>
+                        <span class="ml-auto bg-amber-500/20 text-amber-400 py-0.5 px-2 rounded-full text-xs font-bold">5</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:bg-white/5 hover:text-white rounded-xl font-medium transition-colors">
+                        <i class="ph ph-list-magnifying-glass text-xl"></i>
+                        <span data-i18n="admin.moderation">Listing Moderation</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:bg-white/5 hover:text-white rounded-xl font-medium transition-colors">
+                        <i class="ph ph-scales text-xl"></i>
+                        <span data-i18n="admin.disputes">Disputes</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:bg-white/5 hover:text-white rounded-xl font-medium transition-colors">
+                        <i class="ph ph-chart-line-up text-xl"></i>
+                        Analytics
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 md:ml-64 p-4 sm:p-8">
+            <div class="max-w-6xl mx-auto">
+
+                <div class="mb-8 animate-fade-in">
+                    <h1 class="text-3xl font-bold text-white" data-i18n="admin.title">UNIMONDAY Control Center</h1>
+                    <p class="text-slate-400 mt-1">Platform overview and verification queues.</p>
+                </div>
+
+                <!-- KPI Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8 animate-fade-in delay-100">
+                    <div class="bg-slate-800 border border-slate-700 p-5 rounded-2xl">
+                        <p class="text-slate-400 text-xs font-medium uppercase tracking-wider mb-2">Total Verified Listings</p>
+                        <p class="text-2xl font-bold text-white">1,248</p>
+                    </div>
+                    <div class="bg-slate-800 border border-slate-700 p-5 rounded-2xl">
+                        <p class="text-slate-400 text-xs font-medium uppercase tracking-wider mb-2">Active Students</p>
+                        <p class="text-2xl font-bold text-white">5,432</p>
+                    </div>
+                    <div class="bg-slate-800 border border-slate-700 p-5 rounded-2xl">
+                        <p class="text-slate-400 text-xs font-medium uppercase tracking-wider mb-2">Verified Landlords</p>
+                        <p class="text-2xl font-bold text-white">340</p>
+                    </div>
+                    <div class="bg-slate-800 border border-slate-700 p-5 rounded-2xl">
+                        <p class="text-slate-400 text-xs font-medium uppercase tracking-wider mb-2">Open Disputes</p>
+                        <p class="text-2xl font-bold text-red-400">3</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-fade-in delay-200">
+
+                    <!-- Landlord Verification Queue -->
+                    <div class="lg:col-span-2 bg-slate-800 border border-slate-700 rounded-3xl p-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                                <i class="ph-fill ph-identification-card text-amber-500"></i>
+                                Pending Landlord Verification
+                            </h2>
+                            <span class="bg-amber-500/20 text-amber-400 py-1 px-3 rounded-full text-xs font-bold">5 Pending</span>
+                        </div>
+
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm">
+                                <thead>
+                                    <tr class="border-b border-slate-700 text-slate-400">
+                                        <th class="pb-3 font-medium">Applicant</th>
+                                        <th class="pb-3 font-medium">Documents Provided</th>
+                                        <th class="pb-3 font-medium">Date Applied</th>
+                                        <th class="pb-3 font-medium text-right">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-700/50">
+                                    <tr>
+                                        <td class="py-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center">
+                                                    <i class="ph ph-user text-slate-400"></i>
+                                                </div>
+                                                <div>
+                                                    <p class="font-medium text-white">James M. Kibira</p>
+                                                    <p class="text-xs text-slate-400">ID: LL-9021</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="py-4">
+                                            <div class="flex gap-2">
+                                                <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded text-xs">National ID</span>
+                                                <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded text-xs">Title Deed</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-4 text-slate-400">Oct 24, 2024</td>
+                                        <td class="py-4 text-right">
+                                            <button class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-medium transition-colors">Review</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center">
+                                                    <i class="ph ph-user text-slate-400"></i>
+                                                </div>
+                                                <div>
+                                                    <p class="font-medium text-white">Grace N.</p>
+                                                    <p class="text-xs text-slate-400">ID: LL-9022</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="py-4">
+                                            <div class="flex gap-2">
+                                                <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded text-xs">Passport</span>
+                                                <span class="bg-red-500/10 text-red-400 border border-red-500/20 px-2 py-0.5 rounded text-xs">Missing Deed</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-4 text-slate-400">Oct 23, 2024</td>
+                                        <td class="py-4 text-right">
+                                            <button class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-medium transition-colors">Review</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- System Alerts -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-3xl p-6">
+                        <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                            <i class="ph-fill ph-warning text-red-400"></i>
+                            System Alerts
+                        </h2>
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-xl bg-red-500/10 border border-red-500/20">
+                                <p class="text-sm font-semibold text-red-400 mb-1">High Dispute Rate Detected</p>
+                                <p class="text-xs text-slate-300">Listing L-4092 has received 3 complaints regarding fake photos. Automated suspension applied.</p>
+                                <button class="mt-3 text-xs text-white bg-slate-700 hover:bg-slate-600 px-3 py-1.5 rounded-md transition-colors">Investigate</button>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-700/50 border border-slate-600">
+                                <p class="text-sm font-semibold text-white mb-1">Server Maintenance</p>
+                                <p class="text-xs text-slate-400">Scheduled downtime for database optimization in 48 hours.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
