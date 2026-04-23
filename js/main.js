@@ -1,7 +1,5 @@
 // UNIMONDAY - Main Logic
 
-const UNSPLASH_ACCESS_KEY = "GFRGVmxF64zpxZL22-o3BaVyGxphiGAwXLMfQxLCC2U";
-
 // --- Image Fetching ---
 async function fetchUnsplashImages() {
   try {
@@ -25,6 +23,19 @@ async function fetchUnsplashImages() {
 
       'ws-user-avatar': 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop',
       'ws-avatar-1': 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=150&auto=format&fit=crop',
+      'ws-avatar-top-1': 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=150&auto=format&fit=crop',
+      'ws-avatar-top-2': 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop',
+      'ws-avatar-top-3': 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop',
+
+      'hd-user-avatar': 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop',
+      'hd-img-1': 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1000&auto=format&fit=crop',
+      'hd-img-2': 'https://images.unsplash.com/photo-1502672260266-1c1de2d93688?q=80&w=600&auto=format&fit=crop',
+      'hd-img-3': 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=600&auto=format&fit=crop',
+      'hd-img-4': 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=600&auto=format&fit=crop',
+      'hd-img-5': 'https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=600&auto=format&fit=crop',
+      'hd-landlord': 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=150&auto=format&fit=crop',
+      'hd-rm-1': 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=150&auto=format&fit=crop',
+      'hd-rm-2': 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop',
 
       'll-avatar': 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=150&auto=format&fit=crop',
       'll-app-1': 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop',
@@ -54,6 +65,16 @@ function initTours() {
 
   // Global Check: Has tour been seen? (Commented out for demo purposes so it always runs, or can be tied to a button)
   // if(localStorage.getItem('unimonday_tour_seen')) return;
+
+  // Hook up navigation from student search to house details
+  const detailButtons = document.querySelectorAll('.btn-premium-outline');
+  detailButtons.forEach(btn => {
+    if (btn.textContent.includes('View Details')) {
+      btn.addEventListener('click', () => {
+        window.location.href = 'house-details.html';
+      });
+    }
+  });
 
   if (currentPath.includes('student.html')) {
     const studentTour = driver({

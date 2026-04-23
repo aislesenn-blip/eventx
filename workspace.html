@@ -58,11 +58,23 @@
             <div class="mb-8 animate-fade-in flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
                     <h1 class="text-3xl font-bold text-slate-900 mb-1" data-i18n="workspace.title" id="tour-workspace-title">My House Workspace</h1>
-                    <p class="text-slate-500">Block B, Apartment 4B • 3 Housemates</p>
+                    <p class="text-slate-500 flex items-center gap-2">
+                        <i class="ph-fill ph-house-line"></i> Block B, Apartment 4B <span class="mx-2">•</span>
+                        <span class="flex -space-x-2">
+                            <img id="ws-avatar-top-1" src="" class="w-6 h-6 rounded-full border border-white">
+                            <img id="ws-avatar-top-2" src="" class="w-6 h-6 rounded-full border border-white">
+                            <img id="ws-avatar-top-3" src="" class="w-6 h-6 rounded-full border border-white">
+                        </span>
+                    </p>
                 </div>
-                <button class="btn-premium py-2 px-6 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200" id="tour-report-issue">
-                    <i class="ph ph-warning-circle"></i> Report Issue
-                </button>
+                <div class="flex gap-3">
+                    <button class="btn-premium-outline py-2 px-4 text-sm bg-white">
+                        <i class="ph ph-chat-circle-dots"></i> Message House
+                    </button>
+                    <button class="btn-premium py-2 px-4 text-sm bg-red-50 text-red-600 border border-red-200 hover:bg-red-100" id="tour-report-issue">
+                        <i class="ph ph-warning-circle"></i> Lodge Complaint
+                    </button>
+                </div>
             </div>
 
             <!-- Workspace Grid -->
@@ -71,14 +83,35 @@
                 <!-- Main Content Column -->
                 <div class="lg:col-span-2 space-y-8">
 
-                    <!-- Utility Bills -->
+                    <!-- Expense Ledger -->
                     <div class="glass p-6 rounded-3xl border border-slate-200 bg-white animate-fade-in delay-100" id="tour-utilities">
                         <div class="flex justify-between items-center mb-6">
                             <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
-                                <i class="ph-fill ph-lightning text-amber-500"></i>
-                                <span data-i18n="workspace.utilities">Utility Bills</span>
+                                <i class="ph-fill ph-wallet text-emerald-500"></i>
+                                <span data-i18n="workspace.utilities">Shared Expenses</span>
                             </h2>
-                            <button class="text-sm text-blue-600 font-medium hover:underline">Add Bill</button>
+                            <button class="btn-premium-outline text-xs py-1.5 px-3 rounded-lg"><i class="ph ph-plus"></i> Add Expense</button>
+                        </div>
+
+                        <!-- Ledger Balances -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                                <p class="text-[10px] uppercase font-bold text-slate-500 mb-1">Your Total Due</p>
+                                <p class="text-xl font-bold text-red-500">$15.00</p>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                                <p class="text-[10px] uppercase font-bold text-slate-500 mb-1">You Are Owed</p>
+                                <p class="text-xl font-bold text-emerald-500">$0.00</p>
+                            </div>
+                            <div class="col-span-2 flex items-center justify-between p-3 bg-blue-50 rounded-xl border border-blue-100">
+                                <div class="flex items-center gap-2">
+                                    <i class="ph-fill ph-check-circle text-blue-500 text-xl"></i>
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-900">All Rent Settled</p>
+                                        <p class="text-[10px] text-slate-600">Next due in 14 days</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="space-y-4">
@@ -100,22 +133,22 @@
                                 <button class="ml-4 btn-premium py-1.5 px-4 text-xs">Pay</button>
                             </div>
 
-                            <!-- Water Bill -->
+                            <!-- Cleaning Supplies -->
                             <div class="flex items-center justify-between p-4 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white transition-colors">
                                 <div class="flex items-center gap-4">
-                                    <div class="w-10 h-10 rounded-full bg-cyan-100 flex items-center justify-center">
-                                        <i class="ph-fill ph-drop text-cyan-600 text-lg"></i>
+                                    <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
+                                        <i class="ph-fill ph-broom text-purple-600 text-lg"></i>
                                     </div>
                                     <div>
-                                        <h3 class="font-semibold text-slate-900">Water</h3>
-                                        <p class="text-xs text-slate-500">Paid • Split 3 ways</p>
+                                        <h3 class="font-semibold text-slate-900">Cleaning Supplies</h3>
+                                        <p class="text-xs text-slate-500">Paid by Alex • You owe Alex</p>
                                     </div>
                                 </div>
                                 <div class="text-right">
-                                    <p class="font-bold text-slate-900">$12.00</p>
-                                    <p class="text-xs font-medium text-emerald-500">Settled</p>
+                                    <p class="font-bold text-slate-900">$24.00</p>
+                                    <p class="text-xs font-medium text-red-500">Your Share: $8.00</p>
                                 </div>
-                                <div class="ml-4 w-[72px]"></div> <!-- Spacer to match layout -->
+                                <button class="ml-4 btn-premium py-1.5 px-4 text-xs">Pay</button>
                             </div>
                         </div>
                     </div>
@@ -175,18 +208,29 @@
                         </ul>
                     </div>
 
-                    <!-- Notices -->
+                    <!-- Governance & Conflict Resolution -->
                     <div class="glass p-6 rounded-3xl border border-slate-200 bg-slate-900 text-white animate-fade-in delay-300" id="tour-notices">
                         <h2 class="text-lg font-bold flex items-center gap-2 mb-4">
-                            <i class="ph-fill ph-bell-ringing text-blue-400"></i>
-                            <span data-i18n="workspace.notices">Notices</span>
+                            <i class="ph-fill ph-scales text-blue-400"></i>
+                            <span data-i18n="workspace.notices">Official Notices & Governance</span>
                         </h2>
-                        <div class="p-4 rounded-xl bg-white/10 border border-white/20">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold text-blue-300 uppercase">From Landlord</span>
-                                <span class="text-xs text-slate-400">Yesterday</span>
+
+                        <div class="space-y-3">
+                            <div class="p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/20 transition-colors cursor-pointer">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs font-bold text-blue-300 uppercase flex items-center gap-1"><i class="ph-fill ph-seal-check"></i> From Landlord</span>
+                                    <span class="text-xs text-slate-400">Yesterday</span>
+                                </div>
+                                <p class="text-sm text-slate-200">Maintenance will be checking the AC units this Friday between 10 AM and 2 PM. Please ensure rooms are accessible.</p>
                             </div>
-                            <p class="text-sm text-slate-200">Maintenance will be checking the AC units this Friday between 10 AM and 2 PM. Please ensure rooms are accessible.</p>
+
+                            <div class="p-4 rounded-xl bg-red-500/10 border border-red-500/20 hover:bg-red-500/20 transition-colors cursor-pointer">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs font-bold text-red-300 uppercase flex items-center gap-1"><i class="ph-fill ph-warning-circle"></i> Open Dispute</span>
+                                    <span class="text-xs text-slate-400">Active</span>
+                                </div>
+                                <p class="text-sm text-slate-200">Dispute #1042 regarding unregistered overnight guests. Awaiting mediation.</p>
+                            </div>
                         </div>
                     </div>
 

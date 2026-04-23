@@ -54,7 +54,14 @@ const translations = {
     'lang.toggle': 'Swahili',
     'btn.apply': 'Apply Now',
     'btn.save': 'Save',
-    'btn.cancel': 'Cancel'
+    'btn.cancel': 'Cancel',
+
+    // Showcase
+    'landing.showcase.title': 'Designed for Clarity. Built for Trust.',
+    'landing.showcase.desc': 'Every interaction is crafted to be intuitive, transparent, and seamless. Finding your next home should feel exactly like this—effortless.',
+    'landing.showcase.point1': 'Immersive, high-resolution property galleries.',
+    'landing.showcase.point2': 'A distraction-free, professional environment.',
+    'landing.showcase.point3': 'Fluid performance across all your devices.'
   },
   sw: {
     // Navigation
@@ -111,7 +118,14 @@ const translations = {
     'lang.toggle': 'English',
     'btn.apply': 'Tuma Maombi',
     'btn.save': 'Hifadhi',
-    'btn.cancel': 'Ghairi'
+    'btn.cancel': 'Ghairi',
+
+    // Showcase
+    'landing.showcase.title': 'Imeundwa kwa Uwazi. Imejengwa kwa Uaminifu.',
+    'landing.showcase.desc': 'Kila mwingiliano umeundwa kuwa rahisi kueleweka, wazi, na usio na usumbufu. Kutafuta nyumba yako mpya inapaswa kuwa hivi—bila shida.',
+    'landing.showcase.point1': 'Picha zenye ubora wa juu zinazovutia za nyumba.',
+    'landing.showcase.point2': 'Mazingira ya kitaalamu yasiyo na usumbufu.',
+    'landing.showcase.point3': 'Utendaji mzuri katika vifaa vyako vyote.'
   }
 };
 

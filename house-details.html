@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details - UNIMONDAY</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-slate-50 antialiased text-slate-800">
+
+    <nav class="fixed w-full z-50 glass border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2">
+                    <i class="ph-fill ph-house-line text-2xl text-slate-900"></i>
+                    <span class="font-bold text-lg tracking-tight text-slate-900">UNIMONDAY</span>
+                </a>
+
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="student.html" class="text-blue-600 font-medium" data-i18n="nav.search">Find Houses</a>
+                    <a href="workspace.html" class="text-slate-600 hover:text-slate-900 transition-colors" data-i18n="nav.workspace">My Workspace</a>
+                    <div class="h-5 w-px bg-slate-300 mx-2"></div>
+                    <img id="hd-user-avatar" src="" alt="Profile" class="w-8 h-8 rounded-full object-cover border border-slate-200">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Breadcrumbs & Actions -->
+            <div class="flex justify-between items-center mb-6 animate-fade-in">
+                <a href="student.html" class="flex items-center gap-2 text-slate-500 hover:text-slate-900 transition-colors text-sm font-medium">
+                    <i class="ph ph-arrow-left"></i> Back to search
+                </a>
+                <div class="flex gap-3">
+                    <button class="p-2 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-red-500 hover:border-red-200 transition-colors hover-lift">
+                        <i class="ph ph-heart text-xl"></i>
+                    </button>
+                    <button class="p-2 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-blue-500 hover:border-blue-200 transition-colors hover-lift">
+                        <i class="ph ph-share-network text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Immersive Gallery -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12 animate-fade-in delay-100 rounded-3xl overflow-hidden">
+                <div class="md:col-span-2 md:row-span-2 h-64 md:h-[500px]">
+                    <img id="hd-img-1" src="" class="w-full h-full object-cover cursor-pointer hover:opacity-95 transition-opacity">
+                </div>
+                <div class="hidden md:block h-[242px]">
+                    <img id="hd-img-2" src="" class="w-full h-full object-cover cursor-pointer hover:opacity-95 transition-opacity">
+                </div>
+                <div class="hidden md:block h-[242px]">
+                    <img id="hd-img-3" src="" class="w-full h-full object-cover cursor-pointer hover:opacity-95 transition-opacity">
+                </div>
+                <div class="hidden md:block h-[242px]">
+                    <img id="hd-img-4" src="" class="w-full h-full object-cover cursor-pointer hover:opacity-95 transition-opacity">
+                </div>
+                <div class="hidden md:block h-[242px] relative">
+                    <img id="hd-img-5" src="" class="w-full h-full object-cover cursor-pointer hover:opacity-95 transition-opacity">
+                    <div class="absolute inset-0 bg-slate-900/40 flex items-center justify-center cursor-pointer hover:bg-slate-900/50 transition-colors">
+                        <span class="text-white font-semibold flex items-center gap-2"><i class="ph ph-images"></i> Show all photos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Content Left -->
+                <div class="lg:col-span-2 space-y-12 animate-fade-in delay-200">
+
+                    <!-- Title & Highlights -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide flex items-center gap-1">
+                                <i class="ph-fill ph-shield-check"></i> UNIMONDAY Verified
+                            </span>
+                            <span class="text-sm font-medium text-slate-500">Shared Apartment</span>
+                        </div>
+                        <h1 class="text-4xl font-bold text-slate-900 mb-2">Premium Shared Studio Near Campus</h1>
+                        <p class="text-lg text-slate-600 flex items-center gap-2">
+                            <i class="ph ph-map-pin text-slate-400"></i> Block B, University Avenue (5 mins walk)
+                        </p>
+                    </div>
+
+                    <div class="h-px bg-slate-200"></div>
+
+                    <!-- Landlord Profile -->
+                    <div class="flex items-center gap-6">
+                        <img id="hd-landlord" src="" class="w-16 h-16 rounded-full object-cover border border-slate-200">
+                        <div>
+                            <p class="text-sm text-slate-500 font-medium mb-1">Hosted by</p>
+                            <div class="flex items-center gap-2">
+                                <h3 class="text-lg font-bold text-slate-900">Mr. Anderson</h3>
+                                <i class="ph-fill ph-seal-check text-blue-500 text-xl" title="Verified Owner"></i>
+                            </div>
+                            <p class="text-sm text-slate-600 mt-1 flex items-center gap-4">
+                                <span><i class="ph-fill ph-star text-amber-400"></i> 4.9 (42 reviews)</span>
+                                <span><i class="ph ph-clock text-slate-400"></i> Responds within 1 hr</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="h-px bg-slate-200"></div>
+
+                    <!-- Description -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">About this home</h2>
+                        <div class="prose prose-slate max-w-none text-slate-600">
+                            <p>Designed for the focused student. This modern shared studio offers a perfect balance of privacy and community. The apartment features high-speed fiber internet, a fully equipped kitchen with modern appliances, and a quiet study area.</p>
+                            <p>Security is our top priority, with 24/7 gate surveillance and smart lock entry. You are literally a 5-minute walk from the main university gates.</p>
+                        </div>
+                    </div>
+
+                    <!-- Amenities -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-6">What this place offers</h2>
+                        <div class="grid grid-cols-2 gap-y-4 gap-x-8">
+                            <div class="flex items-center gap-3 text-slate-700">
+                                <i class="ph ph-wifi-high text-2xl text-slate-400"></i>
+                                <span>Fast Fiber WiFi (Included)</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-700">
+                                <i class="ph ph-desktop-tower text-2xl text-slate-400"></i>
+                                <span>Dedicated Workspace</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-700">
+                                <i class="ph ph-washing-machine text-2xl text-slate-400"></i>
+                                <span>In-unit Laundry</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-700">
+                                <i class="ph ph-snowflake text-2xl text-slate-400"></i>
+                                <span>Air Conditioning</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-700">
+                                <i class="ph ph-cooking-pot text-2xl text-slate-400"></i>
+                                <span>Equipped Kitchen</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-700">
+                                <i class="ph ph-shield-check text-2xl text-slate-400"></i>
+                                <span>24/7 Security</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="h-px bg-slate-200"></div>
+
+                    <!-- Roommate Dynamics -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-2">Your Future Housemates</h2>
+                        <p class="text-slate-600 mb-6">2 out of 3 spots filled. Looking for one more student.</p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="glass p-5 rounded-2xl border border-slate-200 bg-white flex gap-4">
+                                <img id="hd-rm-1" src="" class="w-12 h-12 rounded-full object-cover border border-slate-100">
+                                <div>
+                                    <h4 class="font-bold text-slate-900">Alex M.</h4>
+                                    <p class="text-xs text-slate-500 mb-2">Computer Science, Year 3</p>
+                                    <div class="flex gap-2">
+                                        <span class="text-[10px] uppercase font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">Night Owl</span>
+                                        <span class="text-[10px] uppercase font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">Quiet</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="glass p-5 rounded-2xl border border-slate-200 bg-white flex gap-4">
+                                <img id="hd-rm-2" src="" class="w-12 h-12 rounded-full object-cover border border-slate-100">
+                                <div>
+                                    <h4 class="font-bold text-slate-900">David K.</h4>
+                                    <p class="text-xs text-slate-500 mb-2">Architecture, Year 2</p>
+                                    <div class="flex gap-2">
+                                        <span class="text-[10px] uppercase font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">Early Riser</span>
+                                        <span class="text-[10px] uppercase font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">Social</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar Sticky -->
+                <div class="lg:col-span-1 relative">
+                    <div class="sticky top-24 glass p-6 rounded-3xl border border-slate-200 bg-white shadow-xl shadow-slate-200/50">
+                        <div class="flex items-baseline gap-1 mb-6">
+                            <span class="text-3xl font-bold text-slate-900">$250</span>
+                            <span class="text-slate-500 font-medium">/ month</span>
+                        </div>
+
+                        <!-- Smart Contract Summary -->
+                        <div class="bg-slate-50 rounded-2xl p-4 mb-6 border border-slate-100">
+                            <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Transparent Pricing</h4>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between text-slate-600">
+                                    <span>Monthly Rent</span>
+                                    <span class="font-medium text-slate-900">$250</span>
+                                </div>
+                                <div class="flex justify-between text-slate-600">
+                                    <span>Security Deposit <i class="ph-fill ph-info text-slate-400"></i></span>
+                                    <span class="font-medium text-slate-900">$100</span>
+                                </div>
+                                <div class="flex justify-between text-slate-600">
+                                    <span>Utilities Est. <i class="ph-fill ph-info text-slate-400"></i></span>
+                                    <span class="font-medium text-slate-900">$25/mo</span>
+                                </div>
+                                <div class="h-px bg-slate-200 my-2"></div>
+                                <div class="flex justify-between font-bold text-slate-900">
+                                    <span>Move-in Total</span>
+                                    <span>$350</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 p-3 border border-slate-200 rounded-xl cursor-pointer hover:border-blue-500 transition-colors">
+                                <i class="ph ph-calendar-blank text-xl text-slate-400"></i>
+                                <div class="flex-1">
+                                    <p class="text-xs font-bold text-slate-900 uppercase">Move-in Date</p>
+                                    <p class="text-sm text-slate-500">Select date</p>
+                                </div>
+                                <i class="ph ph-caret-down text-slate-400"></i>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 border border-slate-200 rounded-xl cursor-pointer hover:border-blue-500 transition-colors">
+                                <i class="ph ph-file-text text-xl text-slate-400"></i>
+                                <div class="flex-1">
+                                    <p class="text-xs font-bold text-slate-900 uppercase">Duration</p>
+                                    <p class="text-sm text-slate-500">12 Months</p>
+                                </div>
+                                <i class="ph ph-caret-down text-slate-400"></i>
+                            </div>
+                        </div>
+
+                        <button class="btn-premium w-full py-4 mt-6 text-lg">Apply for this home</button>
+                        <p class="text-xs text-center text-slate-500 mt-4">You won't be charged yet.</p>
+
+                        <div class="mt-6 pt-6 border-t border-slate-100 flex items-start gap-3">
+                            <i class="ph-fill ph-shield-check text-blue-500 text-xl mt-0.5"></i>
+                            <div>
+                                <p class="text-sm font-bold text-slate-900">Protected by UNIMONDAY</p>
+                                <p class="text-xs text-slate-500 mt-1">Smart contracts and secure payments guarantee peace of mind.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
